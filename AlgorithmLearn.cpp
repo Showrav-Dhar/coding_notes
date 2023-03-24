@@ -240,7 +240,7 @@
 
 
                                 
-                                //          greedy method
+                                //          greedy method   //
 
 //              Fractional knapsack                //
 
