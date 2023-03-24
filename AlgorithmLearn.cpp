@@ -306,4 +306,5 @@ int main()
 
     int max_profit = fractional_knapsack(items,capacity);
     cout<<"Maximum profit = "<<max_profit<<endl;
+    //testing commit//
 }
