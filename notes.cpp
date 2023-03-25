@@ -318,7 +318,7 @@
     
 // }
 
-// graph datastructure
+//                                      graph datastructure
 
 
 // for non-weighted graph
@@ -341,12 +341,12 @@
     // }
 
 
-    // adjacency matrix represntation
+    // adjacency list represntation
     // int n,m;
-    // cin>>n>>m;
+    // cin>>n>>m; // n = number of nodes , m = number of edges
 
+    // undirected graph; //
     // vector<int> adj[n+1];
-    // //undirected graph;
     // int u,v;
     // for (int i = 0; i < m; i++)
     // {
@@ -357,7 +357,7 @@
 
 
 
-    // for directed graph
+    // for Directed graph
     // adjacency list 
     // int n,m;
     // cin>>n>>m;
@@ -386,6 +386,60 @@
 
 // }
 
+//           -->>>>           BFS           <<<<--             ///
 
+// #include<bits/stdc++.h>
+// using namespace std;
+// const int N = 1e5+10;
+// vector<int> g[N];
+// int vis[N] ;
+// int level[N];
 
-///  ->> for weighted graph
+// void BFS(int source)
+// {
+//     queue<int>q;
+//     q.push(source);
+//     vis[source] = 1;
+
+//     while(!q.empty())
+//     {
+//         int node = q.front();
+//         q.pop();
+
+//         cout<<node<<" ";// je order e traverse hochhe
+
+//         for(int child : g[node])
+//         {
+//             if(!vis[child]){
+//                 q.push(child);
+//                 vis[child] = 1;// q te insert korar por e visited mark kore dilam
+//             //    level[child] = level[node]+1; 
+//             }
+//         }
+//     }
+//     cout<<endl;
+
+// }
+
+// int main()
+// {
+//     int n;
+//     cin>>;
+
+//     for (int i = 0; i < n; i++)// luv n-1 disilo 
+//     {
+//         int x,y;
+//         cin>>x>>y;
+//         g[x].push_back(y);
+//         g[y].push_back(x);
+//     }
+
+//     BFS(6);
+
+//     // for (int i = 1; i <=n ; i++)
+//     // {
+//     //     cout<<i<<" : "<<level[i]<<endl;
+//     // }
+    
+    
+// }
