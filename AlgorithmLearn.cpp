@@ -256,10 +256,10 @@ bool cmp (pair<int,int> a, pair<int,int> b)
 }
 
 
-int fractional_knapsack( vector< pair< int,int > > items,int capacity)
+double fractional_knapsack( vector< pair< int,int > > items,int capacity)
 {
     int total_items = items.size();
-    int total_profits = 0;
+    double total_profits = 0;
 
     sort(items.begin(),items.end(),cmp);
 
@@ -276,8 +276,10 @@ int fractional_knapsack( vector< pair< int,int > > items,int capacity)
         }else{
 
             double frac_profit = items[i].first * ( (double)capacity/ items[i].second );// item profit * (remaining capacity/item weight)
+            capacity-=capacity;
             total_profits += frac_profit;
         }
+        
     }
     
     return total_profits;
@@ -294,17 +296,17 @@ int main()
     int weights,profits;
     for (int i = 0; i < n; i++)
     {
-       cout<<"profits weights"<<endl;
+    //    cout<<"profits weights"<<endl;
        cin>>profits>>weights;
        items[i] = make_pair(profits,weights);
        
     }
-
+    
     int capacity;
     cout<<"Enter capacity of the knapsack\n";
     cin>>capacity;
 
-    int max_profit = fractional_knapsack(items,capacity);
+    double max_profit = fractional_knapsack(items,capacity);
     cout<<"Maximum profit = "<<max_profit<<endl;
    // okay git is working
    
