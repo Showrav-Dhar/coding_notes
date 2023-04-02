@@ -443,3 +443,24 @@
     
     
 // }
+
+
+// all possible subarray of an array
+
+// void subArray(int arr[], int n)
+// {
+//     // Pick starting point
+//     for (int i=0; i <n; i++)
+//     {
+//         // Pick ending point
+//         for (int j=i; j<n; j++)
+//         {
+//             // Print subarray between current starting
+//             // and ending points
+//             for (int k=i; k<=j; k++)
+//                 cout << arr[k] << " ";
+  
+//             cout << endl;
+//         }
+//     }
+// }
