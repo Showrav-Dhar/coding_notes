@@ -194,6 +194,7 @@ void MERGE(int low,int mid,int high)
     for (int i = low; i <= high; i++)
     {
         ara[i] = temp[i-low];
+        // why i-low = > https://youtu.be/ogjf7ORKfd8?t=2359
     }
 
 }
@@ -234,7 +235,6 @@ int main()
     {
        cout<<ara[i]<<" ";
     }
-
     
 }
 
