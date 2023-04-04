@@ -153,7 +153,6 @@
 
 // //      MERGE SORT with arrays
 
-// code ta bhul see strivers video 
 
 #include<bits/stdc++.h>
 using namespace std;
