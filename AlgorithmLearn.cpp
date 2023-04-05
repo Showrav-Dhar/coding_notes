@@ -244,70 +244,182 @@ int main()
 
 //              Fractional knapsack                //
 
-// #include<bits/stdc++.h>
-// using namespace std;
+#include<bits/stdc++.h>
+using namespace std;
 
-// bool cmp (pair<int,int> a, pair<int,int> b)
-// {
-//     double r1 = a.first/a.second;
-//     double r2 = b.first/b.second;
+bool cmp (pair<int,int> a, pair<int,int> b)
+{
+    double r1 = a.first/a.second;
+    double r2 = b.first/b.second;
 
-//     return r1>r2;
-// }
+    return r1>r2;
+}
 
 
-// double fractional_knapsack( vector< pair< int,int > > items,int capacity)
-// {
-//     int total_items = items.size();
-//     double total_profits = 0;
+double fractional_knapsack( vector< pair< int,int > > items,int capacity)
+{
+    int total_items = items.size();
+    double total_profits = 0;
 
-//     sort(items.begin(),items.end(),cmp);
+    sort(items.begin(),items.end(),cmp);
 
-//     for (int i = 0; i < total_items; i++)
-//     {
-//         if(capacity==0){
-//             break;
-//         }
+    for (int i = 0; i < total_items; i++)
+    {
+        if(capacity==0){
+            break;
+        }
 
-//         if(items[i].second<=capacity)
-//         {
-//             capacity -= items[i].second;//weight of item
-//             total_profits += items[i].first;//profit of item
-//         }else{
+        if(items[i].second<=capacity)
+        {
+            capacity -= items[i].second;//weight of item
+            total_profits += items[i].first;//profit of item
+        }else{
 
-//             double frac_profit = items[i].first * ( (double)capacity/ items[i].second );// item profit * (remaining capacity/item weight)
-//             capacity-=capacity;
-//             total_profits += frac_profit;
-//         }
+            double frac_profit = items[i].first * ( (double)capacity/ items[i].second );// item profit * (remaining capacity/item weight)
+            capacity-=capacity;
+            total_profits += frac_profit;
+        }
         
-//     }
+    }
     
-//     return total_profits;
-// }
+    return total_profits;
+}
 
-// int main()
-// {
-//     cout<<"Enter number of items\n";
-//     int n;
-//     cin>>n;
+int main()
+{
+    cout<<"Enter number of items\n";
+    int n;
+    cin>>n;
 
-//     vector< pair< int,int > > items(n);
-//     cout<<"Enter profits and weights of the items\n";
-//     int weights,profits;
-//     for (int i = 0; i < n; i++)
-//     {
-//     //    cout<<"profits weights"<<endl;
-//        cin>>profits>>weights;
-//        items[i] = make_pair(profits,weights);
+    vector< pair< int,int > > items(n);
+    cout<<"Enter profits and weights of the items\n";
+    int weights,profits;
+    for (int i = 0; i < n; i++)
+    {
+    //    cout<<"profits weights"<<endl;
+       cin>>profits>>weights;
+       items[i] = make_pair(profits,weights);
        
-//     }
+    }
     
-//     int capacity;
-//     cout<<"Enter capacity of the knapsack\n";
-//     cin>>capacity;
+    int capacity;
+    cout<<"Enter capacity of the knapsack\n";
+    cin>>capacity;
 
-//     double max_profit = fractional_knapsack(items,capacity);
-//     cout<<"Maximum profit = "<<max_profit<<endl;
-//    // okay git is working
+    double max_profit = fractional_knapsack(items,capacity);
+    cout<<"Maximum profit = "<<max_profit<<endl;
+   // okay git is working
    
-// }
+}
+
+
+                                    // Dijkstra algorithm 
+
+                                    
+// easy implementation
+#include<bits/stdc++.h>
+using namespace std;
+const int INFINITE = 99999;
+const int MAX = 10;
+int graph[100][100];
+
+void dijkstra(int n,int start)
+{
+    
+    int cost[100][100];
+    int distance[100];
+    int visited [100];
+
+    int count , minidistance , nextnode;
+
+   
+     // cost matrix 
+    for (int i = 1; i <=n; i++)
+    {
+       for (int j = 1; j <=n; j++)
+       {
+         if(graph[i][j] == 0){
+// check kortesi ekta node er shate onno arekta node er connection ase kina.
+//conncetion thakle oi value ta boshbe na thakle 0
+            cost[i][j] = INFINITE;
+         }else{
+            cost[i][j] = graph[i][j];
+         }
+       }
+    }
+
+
+
+    for (int i = 1; i <=n; i++)
+    {
+        distance[i] = cost[start][i];
+        visited[i] = 0;
+    }
+
+    distance[start] = 0;// start node er distance 0 kore dilam
+    visited[start] = 1;// starting node visited tai 1 diye mark kore dilam
+    count = 1;// node er count raktesi
+
+    while(count<=n)
+    {
+        minidistance = INFINITE;//minimum distance shurute infinty
+
+        for (int i = 1; i <=n; i++)// protibar jei node e asi oi node er shate connected node gular shortest distance ta store kortesi
+        {
+           if(distance[i]<minidistance and visited[i] != 1){//visited[i] == 0 lekha jabe
+            minidistance = distance[i];
+            nextnode = i;
+           }
+        }
+
+        visited[nextnode] = 1;
+
+        // node er edge relaxation
+        for (int i = 1; i <=n; i++)
+        {
+            if( visited[i] != 1){
+                if(minidistance + cost[nextnode][i] < distance[i]){
+                    distance[i] = minidistance + cost[nextnode][i];
+                }
+            }
+        }
+        
+        count++;
+    }
+
+
+    for (int i = 1; i <=n; i++)
+    {
+        if(i!=start){
+            cout<<"Distance from source to "<<i<<" : "<<distance[i]<<endl;
+        }
+    }
+    
+}
+
+
+int main()
+{
+    int n;
+    cout<<"Enter number of nodes\n";
+    cin>>n;
+
+    cout<<"Enter Adjacency matrix of the graph"<<endl;
+    for (int i = 1; i <=n; i++)
+    {
+        for (int j = 1; j <=n; j++)
+        {
+            cin>>graph[i][j];
+            // cout<<i<<j<<" ";
+        }
+        // cout<<endl;
+    }
+
+    int start ;
+    cout<<"Enter Start Node\n";
+    cin>>start;
+
+    dijkstra(n,start);
+
+    
+}
