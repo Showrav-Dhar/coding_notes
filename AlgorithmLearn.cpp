@@ -1,157 +1,157 @@
-//                                      selection sort
+                                     selection sort
 
-// #include<bits/stdc++.h>
-// using namespace std;
+#include<bits/stdc++.h>
+using namespace std;
 
-// void selction_Sort(int *ara,int n)
-// {
-//     int mini = 0;
-//     for (int i = 0; i <=n-2; i++)
-//     {
-//         mini = i;//assuming the first item is the minimum,and storing the index of the first item
-//         for (int j = i; j <=n-1; j++)
-//         {
-//             if(ara[j] < ara[mini]){
-//                 mini = j;//storing the index of the next minimum item
-//             }
-//         }
-//         swap(ara[i],ara[mini]);
-//     }
+void selction_Sort(int *ara,int n)
+{
+    int mini = 0;
+    for (int i = 0; i <=n-2; i++)
+    {
+        mini = i;//assuming the first item is the minimum,and storing the index of the first item
+        for (int j = i; j <=n-1; j++)
+        {
+            if(ara[j] < ara[mini]){
+                mini = j;//storing the index of the next minimum item
+            }
+        }
+        swap(ara[i],ara[mini]);
+    }
     
-// }
+}
 
-//                                      Insertion sort
+                                     Insertion sort
 
-// void insertion_SORT(int *ara,int n)
-// {
-//     for (int i = 0; i < n; i++)
-//     {
-//         int j = i;
-//         while(j>0 and ara[j]<ara[j-1]){
-//             //j = 0 hobe na,cause j = 0 hole j-1 = - 1 hoye jabe
-//             swap(ara[j],ara[j-1]);
-//             j--;
-//             //keep swapping until there is any element less than ara[j];
-//         }
-//     }
+void insertion_SORT(int *ara,int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        int j = i;
+        while(j>0 and ara[j]<ara[j-1]){
+            //j = 0 hobe na,cause j = 0 hole j-1 = - 1 hoye jabe
+            swap(ara[j],ara[j-1]);
+            j--;
+            //keep swapping until there is any element less than ara[j];
+        }
+    }
     
-// }
+}
 
 
 
 
-// int main()
-// {
-//     int n = 6;
-//     int ara[6] = {13,46,24,52,20,9};
+int main()
+{
+    int n = 6;
+    int ara[6] = {13,46,24,52,20,9};
 
-//     // selction_Sort(ara,n);
-//     // insertion_SORT(ara,n);
+    // selction_Sort(ara,n);
+    // insertion_SORT(ara,n);
 
-//     for (int i = 0; i < n; i++)
-//     {
-//         cout<<ara[i]<<" ";
-//     }
-// }
+    for (int i = 0; i < n; i++)
+    {
+        cout<<ara[i]<<" ";
+    }
+}
 
 
-// // bit shifting
+// bit shifting
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// int main()
-// {
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
     
 
-//     // left shift of a number means multipling it by 2;
-//     cout<<"LEFT SHIFT\n";
-//     for (int i = 1; i <=5; i++)
-//     {
-//         int a = 10<<i;
-//         cout<<a<<" ";
-//     }
+    // left shift of a number means multipling it by 2;
+    cout<<"LEFT SHIFT\n";
+    for (int i = 1; i <=5; i++)
+    {
+        int a = 10<<i;
+        cout<<a<<" ";
+    }
 
-//     // Right shift of a number means dividing it by 2;
-//     cout<<"\nRight Shift\n";
-//     for (int i = 1; i <=5; i++)
-//     {
-//         int a = 320>>i;
-//         cout<<a<<" ";
-//     }
+    // Right shift of a number means dividing it by 2;
+    cout<<"\nRight Shift\n";
+    for (int i = 1; i <=5; i++)
+    {
+        int a = 320>>i;
+        cout<<a<<" ";
+    }
     
     
-// }
+}
 
 
-//              QUICK SORT             //
+             QUICK SORT             //
 
-// #include<bits/stdc++.h>
-// using namespace std;
+#include<bits/stdc++.h>
+using namespace std;
 
-// int PARTITION(int *ara,int low,int high)
-// {
-//     int pivot = ara[low];
-//     int i = low;
-//     int j = high;
+int PARTITION(int *ara,int low,int high)
+{
+    int pivot = ara[low];
+    int i = low;
+    int j = high;
 
-//     while(i<j)
-//     {
-//         while(ara[i] <= pivot and i<= high-1)
-//         {
-//             i++;// searching greater than pivot 
-//         }
+    while(i<j)
+    {
+        while(ara[i] <= pivot and i<= high-1)
+        {
+            i++;// searching greater than pivot 
+        }
 
-//         while(ara[j] > pivot and j >= low-1)
-//         {
-//             j--;// searching lesser than pivot 
-//         }
+        while(ara[j] > pivot and j >= low-1)
+        {
+            j--;// searching lesser than pivot 
+        }
 
-//         if(i<j){
-//             swap(ara[i],ara[j]);
-//         }
-//     }
+        if(i<j){
+            swap(ara[i],ara[j]);
+        }
+    }
 
-//     swap(ara[low],ara[j]);// if j crosses i then swap ara[j] with pivot
-//     return j;
-// }
+    swap(ara[low],ara[j]);// if j crosses i then swap ara[j] with pivot
+    return j;
+}
 
 
-// void QUICKsort(int *ara,int low,int high)
-// {
-//     if(low<high){
-//         int partition_index = PARTITION(ara,low,high);
+void QUICKsort(int *ara,int low,int high)
+{
+    if(low<high){
+        int partition_index = PARTITION(ara,low,high);
 
-//         QUICKsort(ara,low,partition_index-1);
-//         QUICKsort(ara,partition_index+1,high);
-//     }
-// }
-// int main()
-// {
-//     cout<<"ENTER SIZE\n";
-//     int n;
-//     cin>>n;
-//     int ara[n];
-//     cout<<"ENTER ELEMENTS\n";
-//     for (int i = 0; i < n; i++)
-//     {
-//         cin>>ara[i];
-//     }
+        QUICKsort(ara,low,partition_index-1);
+        QUICKsort(ara,partition_index+1,high);
+    }
+}
+int main()
+{
+    cout<<"ENTER SIZE\n";
+    int n;
+    cin>>n;
+    int ara[n];
+    cout<<"ENTER ELEMENTS\n";
+    for (int i = 0; i < n; i++)
+    {
+        cin>>ara[i];
+    }
 
-//     int low = 0;
-//     int high = n-1;
+    int low = 0;
+    int high = n-1;
 
-//     cout<<"APPLIED QUICKSORT\n";
-//     QUICKsort(ara,low,high);
+    cout<<"APPLIED QUICKSORT\n";
+    QUICKsort(ara,low,high);
 
-//     cout<<"SORTED ARRAY\n";
-//     for (int i = 0; i < n ; i++)
-//     {
-//         cout<<ara[i]<<" ";
-//     }
+    cout<<"SORTED ARRAY\n";
+    for (int i = 0; i < n ; i++)
+    {
+        cout<<ara[i]<<" ";
+    }
 
-// }
+}
 
-// //      MERGE SORT with arrays
+//      MERGE SORT with arrays
 
 
 #include<bits/stdc++.h>
@@ -315,7 +315,7 @@ int main()
 
                                     // Dijkstra algorithm 
 
-                                    
+
 // easy implementation
 #include<bits/stdc++.h>
 using namespace std;
@@ -423,3 +423,112 @@ int main()
 
     
 }
+
+//optimized implementation
+
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5;
+const int INF = 1e9+10;
+
+vector< pair<int,int> > g[N]; /* <node,ditance> */
+
+void dijkstra(int n,int source)
+{
+    vector<int> vis(N,0);
+    vector<int> dist(N,INF);
+
+    set< pair<int,int> > st;//<distance,node> 
+
+    st.insert(make_pair(0,source));
+    dist[source] = 0;
+
+    while(st.size() > 0)
+    {
+        auto node = *st.begin();// selecting the smallest <distance,node> pair
+
+        int v = node.second;//
+        int v_weight = node.first;
+        st.erase(st.begin());
+        
+        if(vis[v] == 1) continue;
+
+        vis[v] = 1;
+        for(auto child : g[v])/*going to all the childs of V */
+        {       
+            int child_v = child.first;
+            int weight = child.second; 
+            /* performing edge relaxation of the child nodes connected to v */
+            if(dist[v]+weight < dist[child_v]){
+                dist[child_v] = dist[v] + weight;
+                st.insert( make_pair(dist[child_v],child_v) );/* inserting the <distance,node> pair of the childs of V */
+            }
+        }
+    }
+
+
+    for (int i = 1; i <=n; i++)
+    {
+        if(i!=source){
+            cout<<"Distance from source to "<<i<<" : "<<dist[i]<<endl;
+        }
+    }
+    
+}
+
+int main()
+{
+
+    int nodes,edges;
+    cout<<"Enter number of nodes and number of edges \n";
+    cin>>nodes>>edges;
+
+    cout<<"Enter the edges\n";
+    for (int i = 0; i < edges; i++)
+    {
+        int x,y,weight;
+        cin>>x>>y>>weight;
+        g[x].push_back(make_pair(y,weight)); /* <node,ditance> */
+    }
+    
+    cout<<"Enter source node\n";
+    int source ;
+    cin>>source;
+    
+    dijkstra(nodes,source);
+
+
+}
+
+/*
+1. using SET because we need the smalles <distance,node> pair everytime.
+in SET the pairs will be always in sorted order so we will get the smallest pair at the beginning  of the SET every time.
+
+2. while taking input , 
+        g[x].push_back(make_pair(y,weight)); // for directed graph only this line
+        g[y].push_back(make_pair(x,weight)); //for un-directed graph both of the lines
+
+3.
+sample input / output 
+6 8
+1 2 2
+1 3 4
+2 4 7
+3 5 3
+2 3 1
+4 6 1
+5 4 2
+5 6 5
+
+source = 1
+
+output - > 
+distance from source to 2 : 2
+distance from source to 3 : 3
+distance from source to 4 : 8
+distance from source to 5 : 6
+distance from source to 6 : 9
+
+4. tutotial -> https://www.youtube.com/watch?v=F3PNsWE6_hM&t=5s
+
+*/
