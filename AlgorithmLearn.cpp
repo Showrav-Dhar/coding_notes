@@ -485,79 +485,80 @@
 
 //optimized implementation
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// const int N = 1e5;
-// const int INF = 1e9+10;
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5;
+const int INF = 1e9+10;
 
-// vector< pair<int,int> > g[N]; /* <node,ditance> */
+vector< pair<int,int> > g[N]; /* <node,ditance> */ /* adjacency list representation of graph */
 
-// void dijkstra(int n,int source)
-// {
-//     vector<int> vis(N,0);
-//     vector<int> dist(N,INF);
 
-//     set< pair<int,int> > st;//<distance,node> 
+void dijkstra(int n,int source)
+{
+    vector<int> vis(N,0);
+    vector<int> dist(N,INF);
 
-//     st.insert(make_pair(0,source));
-//     dist[source] = 0;
+    set< pair<int,int> > st;//<distance,node> 
 
-//     while(st.size() > 0)
-//     {
-//         auto node = *st.begin();// selecting the smallest <distance,node> pair
+    st.insert(make_pair(0,source));
+    dist[source] = 0;
 
-//         int v = node.second;//
-//         int v_weight = node.first;
-//         st.erase(st.begin());
+    while(st.size() > 0)
+    {
+        auto node = *st.begin();// selecting the smallest <distance,node> pair
+
+        int v = node.second;//
+        int v_weight = node.first;
+        st.erase(st.begin());
         
-//         if(vis[v] == 1) continue;
+        if(vis[v] == 1) continue;
 
-//         vis[v] = 1;
-//         for(auto child : g[v])/*going to all the childs of V */
-//         {       
-//             int child_v = child.first;
-//             int weight = child.second; 
-//             /* performing edge relaxation of the child nodes connected to v */
-//             if(dist[v]+weight < dist[child_v]){
-//                 dist[child_v] = dist[v] + weight;
-//                 st.insert( make_pair(dist[child_v],child_v) );/* inserting the <distance,node> pair of the childs of V */
-//             }
-//         }
-//     }
+        vis[v] = 1;
+        for(auto child : g[v])/*going to all the childs of V */
+        {       
+            int child_v = child.first;
+            int weight = child.second; 
+            /* performing edge relaxation of the child nodes connected to v */
+            if(dist[v]+weight < dist[child_v]){
+                dist[child_v] = dist[v] + weight;
+                st.insert( make_pair(dist[child_v],child_v) );/* inserting the <distance,node> pair of the childs of V */
+            }
+        }
+    }
 
 
-//     for (int i = 1; i <=n; i++)
-//     {
-//         if(i!=source){
-//             cout<<"Distance from source to "<<i<<" : "<<dist[i]<<endl;
-//         }
-//     }
+    for (int i = 1; i <=n; i++)
+    {
+        if(i!=source){
+            cout<<"Distance from source to "<<i<<" : "<<dist[i]<<endl;
+        }
+    }
     
-// }
+}
 
-// int main()
-// {
+int main()
+{
 
-//     int nodes,edges;
-//     cout<<"Enter number of nodes and number of edges \n";
-//     cin>>nodes>>edges;
+    int nodes,edges;
+    cout<<"Enter number of nodes and number of edges \n";
+    cin>>nodes>>edges;
 
-//     cout<<"Enter the edges\n";
-//     for (int i = 0; i < edges; i++)
-//     {
-//         int x,y,weight;
-//         cin>>x>>y>>weight;
-//         g[x].push_back(make_pair(y,weight)); /* <node,ditance> */
-//     }
+    cout<<"Enter the edges\n";
+    for (int i = 0; i < edges; i++)
+    {
+        int x,y,weight;
+        cin>>x>>y>>weight;
+        g[x].push_back(make_pair(y,weight)); /* <node,ditance> */
+    }
     
-//     cout<<"Enter source node\n";
-//     int source ;
-//     cin>>source;
+    cout<<"Enter source node\n";
+    int source ;
+    cin>>source;
     
-//     dijkstra(nodes,source);
+    dijkstra(nodes,source);
 
 
-//}
+}
 
 
 // 1. using SET because we need the smalles <distance,node> pair everytime.
@@ -569,15 +570,15 @@
 
 // 3.
 // sample input / output 
-// 6 8
-// 1 2 2
-// 1 3 4
-// 2 4 7
-// 3 5 3
-// 2 3 1
-// 4 6 1
-// 5 4 2
-// 5 6 5
+6 8
+1 2 2
+1 3 4
+2 4 7
+3 5 3
+2 3 1
+4 6 1
+5 4 2
+5 6 5
 
 // source = 1
 
