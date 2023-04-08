@@ -375,6 +375,22 @@
 //                                     // Dijkstra algorithm 
 
 
+// important concept
+
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5;
+int main()
+{
+
+  vector <int> ara1 (N); /* normal vector , which size in N */
+  vector <int> ara2 [N]; /* array of vector, in the array there is N empty vectors */
+
+  ara2 is used for storing adjacency list of graph.
+
+}
+
+
 // // easy implementation
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -491,7 +507,7 @@ const int N = 1e5;
 const int INF = 1e9+10;
 
 vector< pair<int,int> > g[N]; /* <node,ditance> */ /* adjacency list representation of graph */
-
+/* g is a array and the datatype of the array is vector of pair */
 
 void dijkstra(int n,int source)
 {
