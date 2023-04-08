@@ -318,7 +318,7 @@
     
 // }
 
-//                                      graph datastructure
+//                                      GRAPH datastructure
 
 
 // for non-weighted graph
@@ -388,12 +388,28 @@
 
 //           -->>>>           BFS           <<<<--             ///
 
+
+
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5;
+int main()
+{
+
+  vector <int> ara1 (N); /* normal vector , which size in N */
+  vector <int> ara2 [N]; /* array of vector, in the array there is N empty vectors */
+
+  ara2 is used for storing adjacency list of graph.
+
+}
+
 // #include<bits/stdc++.h>
 // using namespace std;
 // const int N = 1e5+10;
 // vector<int> g[N];
 // int vis[N] ;
 // int level[N];
+
 
 // void BFS(int source)
 // {
