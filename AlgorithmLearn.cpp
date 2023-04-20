@@ -606,3 +606,45 @@ int main()
 // distance from source to 6 : 9
 
 // 4. tutotial -> https://www.youtube.com/watch?v=F3PNsWE6_hM&t=5s
+
+
+// 0/1 knapsack
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+const int N = 1e5;
+
+int wt[1000],val[1000];
+ll dp[1000][10000];
+
+ll func (int indx,int wt_left)
+{  
+    if(wt_left == 0) return 0 ;
+    if( indx < 0 )  return 0 ;
+    if(dp[indx][wt_left] != -1 ) return dp[indx][wt_left];
+
+    //don't choose item at index
+    ll ans = func(indx-1,wt_left);
+    //choose item at index 
+    if(wt_left - wt[indx] >= 0){
+        ans = max( ans, func (indx-1,wt_left - wt[indx])  + val[indx] );
+    }
+
+    return dp[indx][wt_left] = ans;
+
+}
+
+int main()
+{
+
+    memset(dp,-1,sizeof(dp));
+    int n,w;
+    cin>>n>>w;
+    for (int i = 0; i < n; i++)
+    {
+        cin>>wt[i]>>val[i];
+    }
+
+    cout<<func(n-1,w)<<endl;
+    //question - https://atcoder.jp/contests/dp/tasks/dp_d    [ knapsack-1 ]
+}
