@@ -390,18 +390,18 @@
 
 
 
-#include<bits/stdc++.h>
-using namespace std;
-const int N = 1e5;
-int main()
-{
+// #include<bits/stdc++.h>
+// using namespace std;
+// const int N = 1e5;
+// int main()
+// {
 
-  vector <int> ara1 (N); /* normal vector , which size in N */
-  vector <int> ara2 [N]; /* array of vector, in the array there is N empty vectors */
+//   vector <int> ara1 (N); /* normal vector , which size in N */
+//   vector <int> ara2 [N]; /* array of vector, in the array there is N empty vectors */
 
-  ara2 is used for storing adjacency list of graph.
+//   ara2 is used for storing adjacency list of graph.
 
-}
+// }
 
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -480,3 +480,51 @@ int main()
 //         }
 //     }
 // }
+
+
+// Random 
+
+// to find lenght of consecqutive same charachters in a string 
+
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5;
+int main()
+{ 
+
+  string str = "00111100011";
+
+  int c0 = 0;
+  int c1 = 0;
+
+  for (int i = 0; i < str.length(); i++)
+  {
+    if(str[i]=='0'){
+
+      while(str[i]=='0' and i<str.length()){
+        i++;
+        c0++;
+      }
+      cout<<"0 er lengths = "<<c0<<endl;
+
+    }
+    c0 = 0;
+    
+  }
+
+  for (int i = 0; i < str.length(); i++)
+  {
+    if(str[i]=='1'){
+
+      while(str[i]=='1' and i<str.length()){
+        i++;
+        c1++;
+      }
+      cout<<"1 er lengths = "<<c1<<endl;
+    }
+    c1= 0;
+  }
+  
+  
+ 
+}
