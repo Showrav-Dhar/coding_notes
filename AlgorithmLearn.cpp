@@ -386,7 +386,7 @@ int main()
   vector <int> ara1 (N); /* normal vector , which size in N */
   vector <int> ara2 [N]; /* array of vector, in the array there is N empty vectors */
 
-  ara2 is used for storing adjacency list of graph.
+//   ara2 is used for storing adjacency list of graph.
 
 }
 
@@ -586,15 +586,15 @@ int main()
 
 // 3.
 // sample input / output 
-6 8
-1 2 2
-1 3 4
-2 4 7
-3 5 3
-2 3 1
-4 6 1
-5 4 2
-5 6 5
+// 6 8
+// 1 2 2
+// 1 3 4
+// 2 4 7
+// 3 5 3
+// 2 3 1
+// 4 6 1
+// 5 4 2
+// 5 6 5
 
 // source = 1
 
