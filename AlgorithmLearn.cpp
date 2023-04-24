@@ -274,8 +274,8 @@
 
 // int main()
 // {
-//     int n;
-//     cin>>;
+//     int n,m;
+//     cin>>n>>m;
 
 //     for (int i = 0; i < n; i++)// luv n-1 disilo 
 //     {
@@ -285,7 +285,10 @@
 //         g[y].push_back(x);
 //     }
 
-//     BFS(6);
+    // int source;
+    // cin>>source;
+
+//     BFS(source);
 
 //     // for (int i = 1; i <=n ; i++)
 //     // {
@@ -294,6 +297,74 @@
     
     
 // }
+
+
+///             DFS       ///
+#include<bits/stdc++.h>
+using namespace std;
+const int N = 1e5+10;
+vector<int> g[N];
+bool vis[N] ;
+
+void DFS(int vertex)
+{
+    // take action on vertex after entering the vertex 
+    cout<<vertex<<endl;
+    vis[vertex] = true;
+    for(int child : g[vertex]){
+        // cout<<" parent "<< vertex <<", child "<<child <<endl;
+        if(vis[child])  continue;
+        //take action on child before entering the child node
+        DFS(child);
+        //take action on child after exiting the child node
+    }
+    // take action on vertex before exiting the vertex
+     
+}
+
+int main()
+{
+    int n,m;
+    cout<<"Enter number of node and edges\n";
+    cin>>n>>m;
+
+    cout<<"enter edges\n";
+    for (int i = 0; i < m; i++)
+    {
+       int v1,v2;
+       cin>>v1>>v2;
+       g[v1].push_back(v2);
+       g[v2].push_back(v1);
+
+    }
+
+    int source;
+    cout<<"Enter source\n";
+    cin>>source;
+
+    cout<<"After running DFS\n";
+    DFS(source);
+    
+
+}
+
+/*
+6 9
+
+1 3
+1 5
+3 5
+3 4
+3 6
+3 2
+2 6
+4 6
+5 6
+
+1
+
+
+*/
 
 
 
