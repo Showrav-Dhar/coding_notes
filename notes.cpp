@@ -439,8 +439,8 @@
 
 // int main()
 // {
-//     int n;
-//     cin>>;
+//     int n,m;
+//     cin>>n>>m;
 
 //     for (int i = 0; i < n; i++)// luv n-1 disilo 
 //     {
@@ -450,7 +450,10 @@
 //         g[y].push_back(x);
 //     }
 
-//     BFS(6);
+ // int source;
+    // cin>>source;
+
+//     BFS(source);
 
 //     // for (int i = 1; i <=n ; i++)
 //     // {
@@ -486,45 +489,57 @@
 
 // to find lenght of consecqutive same charachters in a string 
 
-#include<bits/stdc++.h>
-using namespace std;
-const int N = 1e5;
-int main()
-{ 
+// #include<bits/stdc++.h>
+// using namespace std;
+// const int N = 1e5;
+// int main()
+// { 
 
-  string str = "00111100011";
+//   string str = "00111100011";
 
-  int c0 = 0;
-  int c1 = 0;
+//   int c0 = 0;
+//   int c1 = 0;
 
-  for (int i = 0; i < str.length(); i++)
-  {
-    if(str[i]=='0'){
+//   for (int i = 0; i < str.length(); i++)
+//   {
+//     if(str[i]=='0'){
 
-      while(str[i]=='0' and i<str.length()){
-        i++;
-        c0++;
-      }
-      cout<<"0 er lengths = "<<c0<<endl;
+//       while(str[i]=='0' and i<str.length()){
+//         i++;
+//         c0++;
+//       }
+//       cout<<"0 er lengths = "<<c0<<endl;
 
-    }
-    c0 = 0;
+//     }
+//     c0 = 0;
     
-  }
+//   }
 
-  for (int i = 0; i < str.length(); i++)
-  {
-    if(str[i]=='1'){
+//   for (int i = 0; i < str.length(); i++)
+//   {
+//     if(str[i]=='1'){
 
-      while(str[i]=='1' and i<str.length()){
-        i++;
-        c1++;
-      }
-      cout<<"1 er lengths = "<<c1<<endl;
-    }
-    c1= 0;
-  }
+//       while(str[i]=='1' and i<str.length()){
+//         i++;
+//         c1++;
+//       }
+//       cout<<"1 er lengths = "<<c1<<endl;
+//     }
+//     c1= 0;
+//   }
   
   
  
+// }
+
+
+bool perfect_square(ll val)
+{  
+    double s=sqrt(val);
+    ll i=sqrt(val);
+    if(s==i){
+        return 1;
+    }else{
+        return 0;
+    }
 }
