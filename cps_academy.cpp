@@ -17,38 +17,70 @@
 /*      class 8     */
 /* modulus */
 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     // cycle of mods;
+
+//     int a = 17;
+//     for (int i = 1; i <= 17; i++)
+//     {
+//         cout<<i%5<<" ";
+//     }
+    
+//     /*
+
+//     1. kono decimal number ke 10 diye mod korle oi number er decimal 
+//     representation er last digit pabo.
+
+//     34 % 10 = 4;
+
+//     2. kono decimal number ke 2 diye mod korle oi number er binary 
+//     representation er last digit pabo.
+
+//     34 = 100010
+
+//     34%2 = 0; 0 is the last digit of the binary representation of 34
+
+//     -> so kono decimal value ke jekono number system er base diye
+//     mod korle oi number system er representation er last digit ta pawa jabe.
+    
+
+//     */
+
+// }
+
+/*   DECIMAL TO BINARY       */
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     // int a = 23; /* binary representation of 23 = 10111*/
+//     string str;
+//     while(a!=0){
+//                             /* mod , div, mod, div ... mod,div */
+//        char c = (a%2)+48;
+//        str.push_back(c);
+//         a = a/2;
+//     }
+//     reverse(str.begin(),str.end());
+//     cout<<str<<endl;
+// }
+
+
+// digits 
 #include<bits/stdc++.h>
 using namespace std;
 int main()
 {
-    // cycle of mods;
+    int a = 2345;
 
-    int a = 17;
-    for (int i = 1; i <= 17; i++)
-    {
-        cout<<i%5<<" ";
+    while(a!=0){
+        
+        int d = a%10; // mod , div , mod , div .... mod, div,mod , div //
+        cout<<d;
+        a = a/10;
     }
-    
-    /*
-
-    1. kono decimal number ke 10 diye mod korle oi number er decimal 
-    representation er last digit pabo.
-
-    34 % 10 = 4;
-
-    2. kono decimal number ke 2 diye mod korle oi number er binary 
-    representation er last digit pabo.
-
-    34 = 100010
-
-    34%2 = 0; 0 is the last digit of the binary representation of 34
-
-    -> so kono decimal value ke jekono number system er base diye
-    mod korle oi number system er representation er last digit ta pawa jabe.
-    
-
-    */
-
-
-
 }
