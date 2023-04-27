@@ -78,11 +78,15 @@ using namespace std;
 int main()
 {
     int a = 2345;
+    string str;
 
-    while(a!=0){
-        
+    while(a!=0){    
         int d = a%10; // mod , div , mod , div .... mod, div,mod , div //
-        cout<<d;
+        char c = d+48;
+        str.push_back(c);
+        // cout<<d;
         a = a/10;
     }
+    reverse(str.begin(),str.end());
+    cout<<str<<endl;
 }
