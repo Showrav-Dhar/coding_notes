@@ -462,7 +462,7 @@
     
     
 // }
-
+/*
 #include<bits/stdc++.h>
 using namespace std;
 const int N = 1e5+10;
@@ -510,7 +510,7 @@ int main()
     
 
 }
-
+*/
 /*
 6 9
 
@@ -598,13 +598,15 @@ int main()
 // }
 
 
-bool perfect_square(ll val)
-{  
-    double s=sqrt(val);
-    ll i=sqrt(val);
-    if(s==i){
-        return 1;
-    }else{
-        return 0;
-    }
-}
+// bool perfect_square(ll val)
+// {  
+//     double s=sqrt(val);
+//     ll i=sqrt(val);
+//     if(s==i){
+//         return 1;
+//     }else{
+//         return 0;
+//     }
+// }
+
+
