@@ -14,6 +14,7 @@
 //     cout<<c<<endl;
 // }
 
+/*      class 8     */
 /* modulus */
 
 #include<bits/stdc++.h>
