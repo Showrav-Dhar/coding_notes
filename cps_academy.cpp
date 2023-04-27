@@ -1,6 +1,7 @@
 
+                                        /*  -> MODULE 1 <-  */
+                /* class 6 */ 
 
-/* class 7 */ 
 /* type casting */
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -14,7 +15,8 @@
 //     cout<<c<<endl;
 // }
 
-/*      class 8     */
+    /*      class 7     */
+
 /* modulus */
 
 // #include<bits/stdc++.h>
