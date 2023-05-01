@@ -72,21 +72,84 @@
 // }
 
 
-// digits 
+// // digits 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     int a = 2345;
+//     string str;
+
+//     while(a!=0){    
+//         int d = a%10; // mod , div , mod , div .... mod, div,mod , div //
+//         char c = d+48;
+//         str.push_back(c);
+//         // cout<<d;
+//         a = a/10;
+//     }
+//     reverse(str.begin(),str.end());
+//     cout<<str<<endl;
+// }
+
+/*  class 8 */
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
 {
-    int a = 2345;
-    string str;
+    // and operator 
 
-    while(a!=0){    
-        int d = a%10; // mod , div , mod , div .... mod, div,mod , div //
-        char c = d+48;
-        str.push_back(c);
-        // cout<<d;
-        a = a/10;
-    }
-    reverse(str.begin(),str.end());
-    cout<<str<<endl;
+    cout<<(  5&6&8  )<<endl;
+ 
+    // or operator 
+    cout<<(  5|6|8  )<<endl;
+
+    // x-or operator 
+
+    cout<<(  5^6^8  )<<endl;
+
+
+    // even shongkhok 1 er x-or always 0
+    
+    cout<<(1^1^1^1)<<endl; // 1 4ta
+
+    // ODD shongkhok 1 er x-or always 1
+
+    cout<<(1^1^1^1^1)<<endl; // 1 5ta 
+
+
+    // a er shate a ke x-or korle 0 ashbe
+
+    cout<<( 5 ^ 5 )<<endl;
+
+    // from 5 numbers , there is only one unique value , which one is unique 
+    // 4 6 4 6 1
+    // 4 4 4 4 1
+
+    // a b c d e
+    int a = 4,b = 6,c = 4,d = 6, e = 10;
+
+    cout<<(a^b^c^d^e)<<endl;
+
+    // n-1 numbers will be given, those will be 1 to n. one number will be missing 
+    // find the missing number;
+
+  int ara[4] = {1,4,3,2};
+
+  int p = 0;
+  for ( int i = 0; i < 4; i++)
+  {
+    p = p ^ ara[i];
+
+  }
+
+  int q = 0;
+  for ( int i = 1; i <=5; i++)
+  {
+    q = q ^ i;
+  }
+
+  cout<<(p^q)<<endl;// 5 is missing 
+
+
 }

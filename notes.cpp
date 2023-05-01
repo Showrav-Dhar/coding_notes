@@ -610,3 +610,16 @@ int main()
 // }
 
 
+// from cf template of Asad_Bin
+
+/*
+
+ll gcd(ll a, ll b){ while (b){ a %= b; swap(a, b);} return a;}
+ll lcm(ll a, ll b){ return (a/gcd(a, b)*b);}
+ll ncr(ll a, ll b){ ll x = max(a-b, b), ans=1; for(ll K=a, L=1; K>=x+1; K--, L++){ ans = ans * K; ans /= L;} return ans;}
+ll bigmod(ll a,ll b,ll mod){ if(b==0){ return 1;} ll tm=bigmod(a,b/2,mod); tm=(tm*tm)%mod; if(b%2==1) tm=(tm*a)%mod; return tm;}
+ll egcd(ll a,ll b,ll &x,ll &y){ if(a==0){ x=0; y=1; return b;} ll x1,y1; ll d=egcd(b%a,a,x1,y1); x=y1-(b/a)*x1; y=x1; return d;}
+ll modpow(ll a,ll p,ll mod) {ll ans=1;while(p){if(p%2)ans=(ans*a)%mod;a=(a*a)%mod;p/=2;} return ans;}
+ll inverse_mod(ll n,ll mod) {return modpow(n,mod-2,mod);}
+
+*/
