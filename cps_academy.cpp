@@ -153,3 +153,14 @@ int main()
 
 
 }
+
+// class 11  [ IF ELSE ]
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a = 10, b = 5;
+
+    string s = (a>b) ? "A is Bigger " : "B is Bigger";
+    cout<<s<<endl;
+}
