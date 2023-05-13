@@ -168,8 +168,6 @@
 //     return GCD(a%b,a);
 // }
 
-
-
 // bool isPrime(int n) {
 // 	if (n < 2) return false;
 // 	if (n < 4) return true;
@@ -218,6 +216,41 @@
 //         if (prime[p]){
 //             ALLprime.push_back(p);
 //         }
+// }
+
+//finding square root of a number
+    // int sq = 0;
+    // for (int i = 1; i <=a ; i++)
+    // {
+    //     if(i*i >=a){
+    //         if(i*i == a){
+    //             sq = i;
+    //         }else{
+    //             sq = i-1;
+    //         }
+    //         break;
+    //     }
+    // }
+//all divisor of n
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     
+//     int a;
+//     cin>>a;
+//    int ct = 0;
+//    for (int i = 1; i <= sqrt(a); i++)
+//    {
+//         int c = a/i;
+//         if(a%i == 0 and i!=c){  
+//             ct+=2;
+//         }else if(a%i==0  and i==c){
+//             ct+=1;
+//         }
+//    }
+//    cout<<ct<<endl;
 // }
  
 //                      NOT NUMBER THEORY below this border
