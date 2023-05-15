@@ -158,15 +158,8 @@
 //                                  number theory essentials
 
 // GCD EUCLID
-// ll GCD(ll a,ll b)
-// {
-//     if(a==0) return b;
 
-//     if(a>b){
-//         swap(a,b);
-//     }
-//     return GCD(a%b,a);
-// }
+//ll gcd(ll a, ll b){ while (b){ a %= b; swap(a, b);} return a;}
 
 // bool isPrime(int n) {
 // 	if (n < 2) return false;
