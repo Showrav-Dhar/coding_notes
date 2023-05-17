@@ -206,3 +206,37 @@
 
     
 // }
+
+/// max array
+// const int mx = 1e8
+// int ara[mx];
+
+// matrix rotation 90 degree clockwise
+
+// int n ;
+// int ara[n][n];
+// int rot[n][n];
+
+// for ( int i = 0,x = 0; i < n; i++,x++)
+// {
+//     for (int j = n-1,y=0; j >=0 ; j--,y++)
+//     {
+//         rot[x][y] = ara[j][i];
+//     }
+    
+// }
+
+
+// // matrix rotation 90 degree anticlockwise
+// int n ;
+// int ara[n][n];
+// int rot[n][n];
+
+// for ( int i = n-1,x = 0; i >=0 ; i--,x++)
+// {
+//     for (int j = 0,y=0; j<n ; j++,y++)
+//     {
+//         rot[x][y] = ara[j][i];
+//     }
+    
+// }
