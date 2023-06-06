@@ -240,3 +240,26 @@
 //     }
     
 // }
+
+// Erasing all occurrence of a specific char from string.
+
+	// string str = "aaassdddaaasdd";
+
+	// // removing all occurence of d;
+
+	// str.erase(remove(str.begin(),str.end(),'d'),str.end());
+
+	// cout<<str<<endl;//aaassaaas
+
+
+
+// //checking if a string is a sub-string of the main string 
+// 	string str = "showrav";
+
+// 	if(str.find("rav") != -1){
+// 		cout<<"FOUND\n";
+// 	}else{
+// 		cout<<"NOT FOUND\n";
+// 	}
+	
+

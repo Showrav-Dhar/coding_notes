@@ -649,3 +649,20 @@ ll modpow(ll a,ll p,ll mod) {ll ans=1;while(p){if(p%2)ans=(ans*a)%mod;a=(a*a)%mo
 ll inverse_mod(ll n,ll mod) {return modpow(n,mod-2,mod);}
 
 */
+
+/*
+
+finding lexicographycally bigger string then the given string by permutation
+built in fucntion
+
+    string str;
+	cin>>str;
+
+	bool val = next_permutation(str.begin(),str.end());
+
+	if(val == 1){
+		cout<<str<<endl;
+	}else{
+		cout<<"no answer\n";
+	}
+*/
