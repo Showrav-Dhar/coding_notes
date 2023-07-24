@@ -666,3 +666,46 @@ built in fucntion
 		cout<<"no answer\n";
 	}
 */
+
+
+// sort vector of pair on the basis of first and second item both
+
+/*
+bool customComparator(const std::pair<int, int>& a, const std::pair<int, int>& b) {
+    // If the first item is not equal, sort based on the first item
+    if (a.first != b.first) {
+        return a.first < b.first;
+    }
+    // If the first item is equal, sort based on the second item
+    return a.second > b.second;
+}
+*/
+
+// #include <iostream>
+// #include <vector>
+// #include <algorithm>
+
+// bool customComparator(const std::pair<int, int>& a, const std::pair<int, int>& b) {
+//     // If the first item is not equal, sort based on the first item
+//     if (a.first != b.first) {
+//         return a.first < b.first;
+//     }
+//     // If the first item is equal, sort based on the second item
+//     return a.second > b.second;
+// }
+
+// int main() {
+//     // Example vector of pairs
+//     std::vector<std::pair<int, int>> pairs = {{2, 8}, {2, 14}, {2, 16}, {1, 6}};
+
+//     // Sort the vector using the custom comparator
+//     std::sort(pairs.rbegin(), pairs.rend(), customComparator);
+
+//     // Print the sorted vector
+//     for (const auto& pair : pairs) {
+//         std::cout << "{" << pair.first << ", " << pair.second << "}" << std::endl;
+//     }
+
+//     return 0;
+// }
+
