@@ -261,5 +261,8 @@
 // 	}else{
 // 		cout<<"NOT FOUND\n";
 // 	}
+
+//always use double type with log() fucntion
+
 	
 
