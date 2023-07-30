@@ -708,3 +708,46 @@ bool customComparator(const std::pair<int, int>& a, const std::pair<int, int>& b
 //     return 0;
 // }
 
+
+// balanced bracket sequence check 
+
+// string is_balanced(string s){
+//     string str = s;
+//     stack<char>st;
+//     int f = 1;
+//     for (int i = 0; i < str.length(); i++)
+//     {
+//         if(str[i] == '(' or str[i] == '{' or str[i] == '['){
+//             st.push(str[i]);
+//         }else{
+//             if(st.size() == 0 ){
+//                 f = 0;
+//                 break;
+//             }else{
+
+//                 char c = st.top();
+
+//                 if(c=='(' and str[i] == ')'){
+//                     st.pop();
+//                 }else if(c=='[' and str[i] == ']'){
+//                     st.pop();
+//                 }else if(c=='{' and str[i] == '}'){
+//                     st.pop();
+//                 }else{
+//                     f = 0;
+//                     break;
+//                 }
+
+//             }
+//         }
+//     }
+
+//     if(st.size() == 0 and f == 1){
+//         // cout<<"YES\n";
+//         return "YES";
+//     }else{
+//         // cout<<"NO\n";
+//         return "NO";
+//     }
+    
+// }
