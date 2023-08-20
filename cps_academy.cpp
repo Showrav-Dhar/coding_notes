@@ -264,9 +264,31 @@
 
 //always use double type with log() fucntion
 
+
+// reverse a queue
+// https://practice.geeksforgeeks.org/problems/queue-reversal/1
+// queue<int> rev(queue<int> q)
+//     {
+        
+//     stack<int>st;
+
+//     while(!q.empty()){
+//         st.push(q.front());
+//         q.pop();
+//     }
+
+//     while(!st.empty()){
+//         q.push(st.top());
+//         st.pop();
+//     }
+    
+//     return q;
+
+// }
+
+
 //Reverse First K elements of Queue ( Geeks for Geeks )
 //  https://practice.geeksforgeeks.org/problems/reverse-first-k-elements-of-queue/1
-
 
 // approach with stack and queue (obviously )
 #include<bits/stdc++.h>
