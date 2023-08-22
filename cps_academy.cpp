@@ -338,21 +338,34 @@
 
 //check if str is a substring of s1 string
 // Substring check
+// C++ implementation of the approach
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-typedef long long int ll;
+
+// function to get the index of s2 in s1
+int isSubstring(string s1, string s2)
+{
+	// using find method to check if s1 is
+	// a substring of s2
+	if (s2.find(s1) != string::npos)
+		return s2.find(s1);
+	return -1;
+}
+
+// Driver code
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+	string s1 = "for";
+	string s2 = "geeksforgeeks";
 
-    string str = "abs";
-    string s1 = "baba";
-    if (s1.find(str) == string::npos) {
-	  cout << "NO\n" << s1 << '\n';
-	}else{
-        cout<<"YES\n";
-    }
-      
+	// Function Call
+	int res = isSubstring(s1, s2);
+	if (res == -1)
+		cout << "Not present";
+	else
+		cout << "Present at index " << res;
+	return 0;
 }
+
+// this code is contributed by phasing17
