@@ -335,29 +335,30 @@
 //     }   
 // }
 
-
-//check if str is a substring of s1 string
 // Substring check
-
 // #include<bits/stdc++.h>
 // using namespace std;
 // typedef long long int ll;
+
+// int is_subString(string s1,string s2)
+// {
+//     if(s1.find(s2) == string::npos){
+//         // not substring
+//         return 0;
+//     }else{
+//         return 1;
+//         // substring
+//     }
+// }
+
 // int main()
 // {
 //     ios_base::sync_with_stdio(false);
 //     cin.tie(NULL);
-
-//     string str = "abs";
-//     string s1 = "absabs";
-//     if (s1.find(str) != string::npos) {
-// 	  cout<<"YES substring";
-// 	}else{
-//         cout<<"NO\n";
-//     }
-
-    
       
+//     cout<<is_subString("abaaba","aba");
 // }
+
 //substring with index 
 // C++ implementation of the approach
 
