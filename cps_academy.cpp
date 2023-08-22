@@ -338,6 +338,27 @@
 
 //check if str is a substring of s1 string
 // Substring check
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     string str = "abs";
+//     string s1 = "absabs";
+//     if (s1.find(str) != string::npos) {
+// 	  cout<<"YES substring";
+// 	}else{
+//         cout<<"NO\n";
+//     }
+
+    
+      
+// }
+//substring with index 
 // C++ implementation of the approach
 
 #include <bits/stdc++.h>
