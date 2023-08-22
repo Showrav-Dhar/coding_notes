@@ -291,6 +291,54 @@
 //  https://practice.geeksforgeeks.org/problems/reverse-first-k-elements-of-queue/1
 
 // approach with stack and queue (obviously )
+// #include<bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+      
+//     queue<int>q;
+//     q.push(10);
+//     q.push(20);
+//     q.push(30);
+//     q.push(40);
+//     q.push(50);
+
+//     int k = 3;
+    
+//     stack<int> st;
+//     queue<int> tq;
+
+//     while(k--){
+//         st.push(q.front());
+//         q.pop();
+
+
+//     while( !st.empty()){
+//         tq.push(st.top());
+//         st.pop();
+//     }
+
+
+//     while (!q.empty())
+//     {
+//         tq.push(q.front());
+//         q.pop();
+//     }
+
+// 	// in GFG return the TQ in solve function
+//     while( !tq.empty()){
+//         cout<<tq.front()<<" ";
+//         tq.pop();
+//     }   
+// }
+
+
+//check if str is a substring of s1 string
+// Substring check
+
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
@@ -298,40 +346,13 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+
+    string str = "abs";
+    string s1 = "baba";
+    if (s1.find(str) == string::npos) {
+	  cout << "NO\n" << s1 << '\n';
+	}else{
+        cout<<"YES\n";
+    }
       
-    queue<int>q;
-    q.push(10);
-    q.push(20);
-    q.push(30);
-    q.push(40);
-    q.push(50);
-
-    int k = 3;
-    
-    stack<int> st;
-    queue<int> tq;
-
-    while(k--){
-        st.push(q.front());
-        q.pop();
-
-
-    while( !st.empty()){
-        tq.push(st.top());
-        st.pop();
-    }
-
-
-    while (!q.empty())
-    {
-        tq.push(q.front());
-        q.pop();
-    }
-
-	// in GFG return the TQ in solve function
-    while( !tq.empty()){
-        cout<<tq.front()<<" ";
-        tq.pop();
-    }   
 }
-
