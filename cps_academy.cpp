@@ -362,49 +362,83 @@
 //substring with index 
 // C++ implementation of the approach
 
-#include <bits/stdc++.h>
-using namespace std;
+// #include <bits/stdc++.h>
+// using namespace std;
 
-// function to get the index of s2 in s1
-int isSubstring(string s1, string s2)
-{
-	// using find method to check if s1 is
-	// a substring of s2
-	if (s2.find(s1) != string::npos)
-		return s2.find(s1);
-	return -1;
-}
+// // function to get the index of s2 in s1
+// int isSubstring(string s1, string s2)
+// {
+// 	// using find method to check if s1 is
+// 	// a substring of s2
+// 	if (s2.find(s1) != string::npos)
+// 		return s2.find(s1);
+// 	return -1;
+// }
 
-// Driver code
-int main()
-{
-	string s1 = "for";
-	string s2 = "geeksforgeeks";
+// // Driver code
+// int main()
+// {
+// 	string s1 = "for";
+// 	string s2 = "geeksforgeeks";
 
-	// Function Call
-	int res = isSubstring(s1, s2);
-	if (res == -1)
-		cout << "Not present";
-	else
-		cout << "Present at index " << res;
-	return 0;
-}
+// 	// Function Call
+// 	int res = isSubstring(s1, s2);
+// 	if (res == -1)
+// 		cout << "Not present";
+// 	else
+// 		cout << "Present at index " << res;
+// 	return 0;
+// }
 
-// this code is contributed by phasing17
+// // this code is contributed by phasing17
 
-//count digit in number
+// //count digit in number
 
-#include<bits/stdc++.h>
-using namespace std;
-typedef long long int ll;
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+// #include<bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
 
-    int n = 100;
+//     int n = 100;
 
-    int Num_Of_Digit = floor( log10(n)+1 );
+//     int Num_Of_Digit = floor( log10(n)+1 );
 
-    cout<<Num_Of_Digit<<endl;
-}
+//     cout<<Num_Of_Digit<<endl;
+// }
+
+
+//balanced bracket
+
+// bool is_balanaced(string str){
+//     stack<char>st;
+
+//     int flag = 1;
+
+//     for (int i = 0; i < str.length(); i++)
+//     {
+//         if(str[i] == '('){
+//             st.push(str[i]);
+//         }else{
+//             if(st.size() == 0){
+//                 flag = 0;
+//                 break;
+//             }else{
+//                 if(st.top() == '(' and str[i] == ')'){
+//                     st.pop();
+//                 }else{
+//                     flag = 0;
+//                     break;
+//                 }
+//             }
+//         }
+//     }
+
+//     if(st.size() == 0 and flag == 1){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
