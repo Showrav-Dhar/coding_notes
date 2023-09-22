@@ -390,7 +390,7 @@
 // 	return 0;
 // }
 
-// // this code is contributed by phasing17
+// // this code is contributed by phasing 17
 
 // //count digit in number
 
