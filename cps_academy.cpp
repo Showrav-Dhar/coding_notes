@@ -442,3 +442,37 @@
 //         return false;
 //     }
 // }
+
+//			module 2
+//prefix sum and contributuon technique
+
+//cses 1650 (range xor queries)
+// just do partial xor of all item then do xor of pref[r]^pref[l-1]
+
+// leetcode 1480
+// leetcode 560 
+// subarray sum equal K
+// CSES 1661
+//CSES 1660
+// int subarraySum(vector<int>& nums, int k) {
+//         int n = nums.size();
+        
+//         int sum = 0;
+//         int ans = 0;
+
+//         unordered_map<int,int>finder;
+//         finder[sum] = 1; // (0 er count 1 kore disi) 
+
+//         for(int i = 0;i<n;i++){
+//             sum+=nums[i];// prefix sum nichhi
+
+//             ans += finder[sum-k];
+
+//             finder[sum]++;
+
+//         }
+
+//         return ans;
+//     }
+
+
