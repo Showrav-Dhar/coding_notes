@@ -476,3 +476,32 @@
 //     }
 
 
+// subsequence checker
+
+// if target string is subsequence of s2 string
+
+// bool is_subsequence(string target,string s2){
+    
+//     stack<char>s;
+//     for(auto it : target){
+//         s.push(it);
+//     }
+
+//     for (int i = s2.length()-1; i >= 0; i--)
+//     {
+//         if(s.empty()){
+//             return true;
+//         }
+
+//         if(s.top() == s2[i]){
+//             s.pop();
+//         }
+//     }
+    
+//     if(s.empty()){
+//         return true;
+//     }else{
+//         return false;
+//     }
+    
+// }
