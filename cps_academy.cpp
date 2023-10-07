@@ -505,3 +505,86 @@
 //     }
     
 // }
+
+
+// Merge Sort
+// #include<bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll ;
+// const int mx = 1e5;
+// int ara[mx];
+
+// void Merge(int l,int mid,int r){
+//     int temp[mx];
+//     int Tid = 0;
+//     int Lid = l;
+//     int Rid = mid+1;
+
+//     while (Lid<=mid and Rid<=r)
+//     {
+//         if(ara[Lid]<=ara[Rid]){
+//             temp[Tid] = ara[Lid];
+//             Lid++;
+//             Tid++;
+//         }else{
+//             temp[Tid] = ara[Rid];
+//             Rid++;
+//             Tid++;
+//         }
+//     }
+//     while(Lid<=mid){
+//         temp[Tid] = ara[Lid];
+//             Lid++;
+//             Tid++;
+//     }
+
+//     while (Rid<=r)
+//     {
+//        temp[Tid] = ara[Rid];
+//             Rid++;
+//             Tid++;
+//     }
+
+//     Tid = 0;
+//     for (int i = l; i <=r; i++)
+//     {
+//         ara[i] = temp[Tid];
+//         Tid++;
+//     }
+    
+    
+// }
+
+// void MergeSort(int l,int r){
+
+//     if(l==r){
+//         return;
+//     }
+
+//     int mid = (l+r)/2;
+//     MergeSort(l,mid);
+//     MergeSort(mid+1,r);
+
+//     Merge(l,mid,r);
+// }
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     int n;
+//     cin>>n;
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin>>ara[i];
+//     }
+
+//     MergeSort(0,n-1);
+
+//     for (int i = 0; i < n; i++)
+//     {
+//         cout<<ara[i]<<" ";
+//     }
+    
+    
+      
+// }
