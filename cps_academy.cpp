@@ -587,3 +587,46 @@
     
       
 // }
+
+/// working with structure
+
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+struct person
+{
+    double score;
+    int age;
+    string name;
+};
+
+bool cmp(const person &a,const person &b){
+    
+    if(a.score > b.score) return true;// higher score gets more priority
+    else if(a.score == b.score and a.age < b.age) return true;//if score same then lesser age 
+    else if(a.score == b.score and a.age == b.age and a.name<b.name) return true;
+    return false;
+}
+
+void printStruct(person info){
+    cout<<info.name<<" "<<info.age<<" "<<info.score<<endl;
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    person a;
+    a.score = 3.95;
+    a.age = 23;
+    a.name = "pazi";
+
+    person b;
+    b.score = 3.15;
+    b.age = 23;
+    b.name = "Showrav";
+
+    cout<<cmp(a,b)<<endl;// as a has higher score so the output will be equal 1
+
+}
