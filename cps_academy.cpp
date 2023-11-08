@@ -590,43 +590,89 @@
 
 /// working with structure
 
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long int ll;
-struct person
-{
-    double score;
-    int age;
-    string name;
-};
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// struct person
+// {
+//     double score;
+//     int age;
+//     string name;
+// };
 
-bool cmp(const person &a,const person &b){
+// bool cmp(const person &a,const person &b){
     
-    if(a.score > b.score) return true;// higher score gets more priority
-    else if(a.score == b.score and a.age < b.age) return true;//if score same then lesser age 
-    else if(a.score == b.score and a.age == b.age and a.name<b.name) return true;
-    return false;
-}
+//     if(a.score > b.score) return true;// higher score gets more priority
+//     else if(a.score == b.score and a.age < b.age) return true;//if score same then lesser age 
+//     else if(a.score == b.score and a.age == b.age and a.name<b.name) return true;
+//     return false;
+// }
 
-void printStruct(person info){
-    cout<<info.name<<" "<<info.age<<" "<<info.score<<endl;
-}
+// void printStruct(person info){
+//     cout<<info.name<<" "<<info.age<<" "<<info.score<<endl;
+// }
 
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
 
-    person a;
-    a.score = 3.95;
-    a.age = 23;
-    a.name = "pazi";
+//     person a;
+//     a.score = 3.95;
+//     a.age = 23;
+//     a.name = "pazi";
 
-    person b;
-    b.score = 3.15;
-    b.age = 23;
-    b.name = "Showrav";
+//     person b;
+//     b.score = 3.15;
+//     b.age = 23;
+//     b.name = "Showrav";
 
-    cout<<cmp(a,b)<<endl;// as a has higher score so the output will be equal 1
+//     cout<<cmp(a,b)<<endl;// as a has higher score so the output will be equal 1
 
-}
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll ;
+// int main()
+// {
+//     // searching the first occurence of a number
+//     // can be done by lower bound too
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     int n,q;
+//     cin>>n>>q;
+//     int ara[n];
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin>>ara[i];
+//     }
+
+//     // while(q--){
+//         int l = 0;
+//         int r = n ;
+//         int ans = n;
+//         int key;
+//         cin>>key;
+//         while(l< r){
+//             int mid = (l+r)/2;
+            
+//             if(ara[mid] == key){
+//                 ans = min(ans,mid);
+//             }
+
+//             if(ara[mid]>=key){
+//                 r = mid - 1;// keep searching left 
+//             }else{
+//                 l = mid +1;
+//             }
+//         }
+//         if(ans == n){
+//             ans = -1;
+//             // means the item is not in the array
+//         }
+//         cout<<ans<<endl;
+//     // }
+    
+      
+// }
