@@ -631,48 +631,61 @@
 
 // }
 
-// #include<bits/stdc++.h>
+
+// first and last occurence of a number using bs
+// #include <bits/stdc++.h>
 // using namespace std;
-// typedef long long int ll ;
+// typedef long long int ll;
 // int main()
 // {
-//     // searching the first occurence of a number
-//     // can be done by lower bound too
-//     ios_base::sync_with_stdio(false);
-//     cin.tie(NULL);
-//     int n,q;
-//     cin>>n>>q;
-//     int ara[n];
-//     for (int i = 0; i < n; i++)
+//     int ara[13] = {9, 9, 2, 2, 6, 6, 6, 7, 7, 4, 4, 4, 4};
+//     int n = 13;
+
+//     int x = 4;
+
+//     sort(ara, ara + n);
+//     // first
+//     int l = 0;
+//     int r = n - 1;
+//     int first_pos = -1;
+//     while (l <= r)
 //     {
-//         cin>>ara[i];
+//         int mid = (l + r) / 2;
+//         if (ara[mid] > x)
+//         {
+//             r = mid - 1;
+//         }
+//         else if (ara[mid] < x)
+//         {
+//             l = mid + 1;
+//         }
+//         else
+//         {
+//             first_pos = mid;
+//             r = mid - 1;
+//         }
 //     }
-
-//     // while(q--){
-//         int l = 0;
-//         int r = n ;
-//         int ans = n;
-//         int key;
-//         cin>>key;
-//         while(l< r){
-//             int mid = (l+r)/2;
-            
-//             if(ara[mid] == key){
-//                 ans = min(ans,mid);
-//             }
-
-//             if(ara[mid]>=key){
-//                 r = mid - 1;// keep searching left 
-//             }else{
-//                 l = mid +1;
-//             }
+//     cout << first_pos << endl;
+//     // last
+//     l = 0;
+//     r = n - 1;
+//     int last_pos = -1;
+//     while (l <= r)
+//     {
+//         int mid = (l + r) / 2;
+//         if (ara[mid] > x)
+//         {
+//             r = mid - 1;
 //         }
-//         if(ans == n){
-//             ans = -1;
-//             // means the item is not in the array
+//         else if (ara[mid] < x)
+//         {
+//             l = mid + 1;
 //         }
-//         cout<<ans<<endl;
-//     // }
-    
-      
+//         else
+//         {
+//             last_pos = mid;
+//             l = mid + 1;
+//         }
+//     }
+//     cout << last_pos << endl;
 // }
