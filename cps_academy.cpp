@@ -693,6 +693,50 @@
 
 // LOWER BOUND AND UPPER BOUND
 
+// #include<bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll ;
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+    
+//     vector<int> ara= { 1, 3, 5, 5, 5, 16, 20 };
+//     int n = ara.size();
+//     int l = 0, r = n-1;
+//     int key = 5;
+//     //lower bound 
+//     int pos = n;
+//     while (l<=r)
+//     {
+//         int mid = (l+r)/2;
+//         if(ara[mid]>=key){
+//             pos = min(pos,mid);
+//             r = mid - 1;
+//         }else{
+//             l = mid + 1;
+//         }
+//     }
+//     cout<<pos<<endl;
+//     //upper bound 
+//     l = 0;
+//     r = n-1;
+//     int pos1 = n;
+//     while (l<=r)
+//     {
+//         int mid = (l+r)/2;
+//         if(ara[mid]>key){
+//             pos1 = min(pos1,mid);
+//             r = mid - 1;
+//         }else{
+//             l = mid + 1;
+//         }
+//     }
+//     cout<<pos1<<endl;
+    
+// }
+
+// Fractional Bisection Binary Search 
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll ;
@@ -700,38 +744,21 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
-    vector<int> ara= { 1, 3, 5, 5, 5, 16, 20 };
-    int n = ara.size();
-    int l = 0, r = n-1;
-    int key = 5;
-    //lower bound 
-    int pos = n;
-    while (l<=r)
-    {
-        int mid = (l+r)/2;
-        if(ara[mid]>=key){
-            pos = min(pos,mid);
-            r = mid - 1;
+
+    double target = 5;
+    double l = 0;
+    double r = target;
+
+    double dif = 1e-6;
+
+    while(r-l>dif){
+        double mid = (l+r)/2;
+
+        if(mid*mid<=target){
+            l = mid;
         }else{
-            l = mid + 1;
+            r = mid;
         }
-    }
-    cout<<pos<<endl;
-    //upper bound 
-    l = 0;
-    r = n-1;
-    int pos1 = n;
-    while (l<=r)
-    {
-        int mid = (l+r)/2;
-        if(ara[mid]>key){
-            pos1 = min(pos1,mid);
-            r = mid - 1;
-        }else{
-            l = mid + 1;
-        }
-    }
-    cout<<pos1<<endl;
-    
+    }      
+    cout<<setprecision(10)<<l<<endl;
 }
