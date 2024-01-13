@@ -770,20 +770,42 @@
 // using namespace std;
 
 // // extra header files
-
-// #include<ext/pb_ds/assoc_container.hpp>
-// using namespace __gnupbds;
-
 // #include <ext/pb_ds/assoc_container.hpp>
 // using namespace __gnu_pbds;
- 
-// typedef tree< long long, null_type, less_equal<long long>, rb_tree_tag,tree_order_statistics_node_update > ordered_set;
- 
+
+// typedef tree< long long, null_type, less_equal<long long>,
+// rb_tree_tag,tree_order_statistics_node_update > ordered_set;
+
+// pbds has 2 fucntions
+
+/// cout<<*X.find_by_order(1)<<endl; // iterator to the k-th largest element
+/// cout<<X.order_of_key(-5)<<endl;  // number of items in a set that are strictly smaller than our item
+
+// less<long long> dile set (choto theke boro)
+// greater<long long> dile set (boro theke choto)
+// less_equal<long long> dile multiset (choto theke boro)
+// greater_equal<long long> dile multiset (boro theke choto)
+
 // typedef long long int ll ;
 // int main()
 // {
 //     ios_base::sync_with_stdio(false);
 //     cin.tie(NULL);
+//     // shob set er moto syntax
+//     ordered_set ps ;
+//     ps.insert(3);
+//     ps.insert(1);
+//     ps.insert(2);
+//     ps.insert(3);
 
-      
+
+//     // cout<<ps.size()<<endl;
+//     // for(auto it : ps){
+//     //     cout<<it<<" ";
+//     // }
+
+//     cout<<ps.order_of_key(3)<<endl;
+    // cout<<*ps.find_by_order(1)<<endl;
+
+
 // }
