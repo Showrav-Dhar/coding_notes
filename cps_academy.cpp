@@ -737,28 +737,53 @@
 // }
 
 // Fractional Bisection Binary Search 
-#include<bits/stdc++.h>
-using namespace std;
-typedef long long int ll ;
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+// #include<bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll ;
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
 
-    double target = 5;
-    double l = 0;
-    double r = target;
+//     double target = 5;
+//     double l = 0;
+//     double r = target;
 
-    double dif = 1e-6;
+//     double dif = 1e-6;
 
-    while(r-l>dif){
-        double mid = (l+r)/2;
+//     while(r-l>dif){
+//         double mid = (l+r)/2;
 
-        if(mid*mid<=target){
-            l = mid;
-        }else{
-            r = mid;
-        }
-    }      
-    cout<<setprecision(10)<<l<<endl;
-}
+//         if(mid*mid<=target){
+//             l = mid;
+//         }else{
+//             r = mid;
+//         }
+//     }      
+//     cout<<setprecision(10)<<l<<endl;
+// }
+
+
+// Policy based data structure
+// pbds
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// // extra header files
+
+// #include<ext/pb_ds/assoc_container.hpp>
+// using namespace __gnupbds;
+
+// #include <ext/pb_ds/assoc_container.hpp>
+// using namespace __gnu_pbds;
+ 
+// typedef tree< long long, null_type, less_equal<long long>, rb_tree_tag,tree_order_statistics_node_update > ordered_set;
+ 
+// typedef long long int ll ;
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+      
+// }
