@@ -809,3 +809,34 @@
 
 
 // }
+
+///                                     number theory
+
+// class 1 - harmonic series
+
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long int ll ;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int lim = 10;
+    int cnt[100000];
+
+    for (int i = 1; i <=lim; i++)
+    {// i = 1
+        for (int j = i; j <=lim; j += i)// j = 1,2,3.....10
+        {
+            cnt[j]++;//cnt[1] = 1,2,....10
+        }
+        
+    }
+
+    for (int i = 1; i <=lim; i++)
+    {
+        cout<<i<<" has total = "<<cnt[i]<<" divisors\n";
+    }
+    
+}
