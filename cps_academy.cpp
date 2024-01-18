@@ -814,29 +814,67 @@
 
 // class 1 - harmonic series
 
-#include<bits/stdc++.h>
-using namespace std;
-typedef long long int ll ;
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+// number of divisors 
+// #include<bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll ;
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
 
-    int lim = 10;
-    int cnt[100000];
+//     int lim = 10;
+//     int cnt[100000];
 
-    for (int i = 1; i <=lim; i++)
-    {// i = 1
-        for (int j = i; j <=lim; j += i)// j = 1,2,3.....10
-        {
-            cnt[j]++;//cnt[1] = 1,2,....10
-        }
+//     for (int i = 1; i <=lim; i++)
+//     {// i = 1
+//         for (int j = i; j <=lim; j += i)// j = 1,2,3.....10
+//         {
+//             cnt[j]++;//cnt[1] = 1,2,....10
+//         }
         
-    }
+//     }
 
-    for (int i = 1; i <=lim; i++)
-    {
-        cout<<i<<" has total = "<<cnt[i]<<" divisors\n";
-    }
+//     for (int i = 1; i <=lim; i++)
+//     {
+//         cout<<i<<" has total = "<<cnt[i]<<" divisors\n";
+//     }
     
-}
+// }
+
+// the divisors 
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll ;
+// const int mx = 1e7+123;
+// vector<int> ara[mx];// array of vector (2 d array)
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     int lim = 10;
+//     for (int i = 1; i <= lim; i++)
+//     {
+//        for (int j = i; j <= lim ; j+=i )
+//        {
+//             ara[j].push_back(i);
+//        }
+//     }
+    
+//     for (int i = 1; i <=lim; i++)
+//     {
+//         cout<<"For "<<i<<" = ";
+//         for (int j = 0; j < ara[i].size(); j++)
+//         {
+
+//             cout<<ara[i][j]<<" ";
+//         }
+//         cout<<endl;
+        
+//     }
+
+// }
+
+// sum of all divisor of a number 
