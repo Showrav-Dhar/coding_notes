@@ -125,3 +125,61 @@
 //     }
     
 // }
+
+//                  Sieve - prime generation
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long int ll ;
+const int mx = 1e7+123;
+ll ara[mx];
+bitset<mx>isPrime;
+vector<int>primes;
+
+void primeGen(ll n){
+    
+    // taking all the odds
+    // because only 2 is the even prime number
+    for (int i = 3; i <= n; i+=2)
+    {
+        isPrime[i] = 1;
+    }
+    
+    for (int i = 3; i <= sqrt(n); i+=2)
+    {
+        if(isPrime[i]){
+            for (int j = i*i ; j <= n; j+=i)
+            {// only marking the multiples of previous prime numbers
+                isPrime[j] = 0;
+            }
+            
+        }
+    }
+    
+    primes.push_back(2);
+    for (int i = 3; i <= n; i++)
+    {
+        if(isPrime[i]){
+            primes.push_back(i);
+        }
+    }
+    
+    
+}
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    ll mx = 50;
+    primeGen(mx);
+    for(auto it : primes){
+        cout<<it<<" ";
+    }
+
+    // c = a*b 
+    // one of a and b will be less than sqrt(c) and one will be greater than sqrt(c)
+    // 48 = 6*8 , sqrt(48) = 6.692 so 6 < 6.692
+    // that is why in the outer loop i<=sqrt(n);
+    
+    
+}
