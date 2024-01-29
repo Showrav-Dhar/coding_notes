@@ -170,6 +170,8 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     
+    // see in the global space -
+    // always use bitset<mx>isPrime; to store the isPrime array
     ll mx = 50;
     primeGen(mx);
     for(auto it : primes){
@@ -180,6 +182,6 @@ int main()
     // one of a and b will be less than sqrt(c) and one will be greater than sqrt(c)
     // 48 = 6*8 , sqrt(48) = 6.692 so 6 < 6.692
     // that is why in the outer loop i<=sqrt(n);
-    
+
     
 }
