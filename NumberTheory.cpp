@@ -85,7 +85,7 @@
 //         for (int j = 0; j < ara[i].size(); j++)
 //         {
 
-//             cout<<ara[i][j]<<" ";
+//             cout<<ara[i][j]<<" ";// allDivs[i][j]
 //         }
 //         cout<<endl;
         
