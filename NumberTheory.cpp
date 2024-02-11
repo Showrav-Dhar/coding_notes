@@ -1,24 +1,22 @@
 ///                                     NUMBER THEORY
 
-
 // class 1 -                            harmonic series
 
 // use of harmonic series
 
 // 1. to precompute number of diviosrs of a number
 // 2. to know all the divisors and multiples of a number
-// 3. to get the sum of all divisor of a number 
+// 3. to get the sum of all divisor of a number
 // 4. to get the sum of all multiple of a number
 
-// // practice question - 
+// // practice question -
 // Task-1: https://cses.fi/problemset/task/1713
 // Solution:https://github.com/MuhammadShahriar/Module-3-Codes/blob/main/Class-1/Vjudge%20Contest%20Task-1.cpp
 
 // Task-2: https://atcoder.jp/contests/abc172/tasks/abc172_d
 // Solution:https://github.com/MuhammadShahriar/Module-3-Codes/blob/main/Class-1/Vjudge%20Contest%20Task-2.cpp
 
-
-// number of divisors 
+// number of divisors
 // #include<bits/stdc++.h>
 // using namespace std;
 // typedef long long int ll ;
@@ -36,14 +34,14 @@
 //         {
 //             cnt[j]++;//cnt[1] = 1,2,....10
 //         }
-        
+
 //     }
 
 //     for (int i = 1; i <=lim; i++)
 //     {
 //         cout<<i<<" has total = "<<cnt[i]<<" divisors\n";
 //     }
-    
+
 // }
 
 // all divisors of a number
@@ -60,7 +58,7 @@
 //     cin.tie(NULL);
 
 //     int lim = 10;
-        // FOR ALL DIVISORS OF A NUMBER
+// FOR ALL DIVISORS OF A NUMBER
 //     for (int i = 1; i <= lim; i++)
 //     {
 //        for (int j = i; j <= lim ; j+=i )
@@ -69,15 +67,14 @@
 //        }
 //     }
 
-    // FOR ALL MULTIPLES  OF A NUMBER
-    // for (int i = 1; i <= lim; i++)
-    //     {
-    //     for (int j = i; j <= lim ; j+=i )
-    //     {
-    //             allMultiples[i].push_back(j);
-    //     }
-    //     }
-
+// FOR ALL MULTIPLES  OF A NUMBER
+// for (int i = 1; i <= lim; i++)
+//     {
+//     for (int j = i; j <= lim ; j+=i )
+//     {
+//             allMultiples[i].push_back(j);
+//     }
+//     }
 
 //     for (int i = 1; i <=lim; i++)
 //     {
@@ -88,12 +85,12 @@
 //             cout<<ara[i][j]<<" ";// allDivs[i][j]
 //         }
 //         cout<<endl;
-        
+
 //     }
 
 // }
 
-// sum of all divisor of a number 
+// sum of all divisor of a number
 // sum of all multiple of a number
 
 // #include<bits/stdc++.h>
@@ -108,7 +105,7 @@
 //     cin.tie(NULL);
 
 //     int lim = 100;
-    
+
 //     for (int i = 1; i <= lim; i++)
 //     {
 //        for (int j = i; j <= lim ; j+=i )
@@ -117,13 +114,13 @@
 //            SumOfDiv[j] = SumOfDiv[j] + i;
 //        }
 //     }
-    
+
 //     for (int i = 1; i <= lim; i++)
 //     {
 //     //    cout<<"sum of all multiple of "<<i<<" is = "<<SumOfMultiple[i]<<endl;
 //     //    cout<<"sum of all divisors of "<<i<<" is = "<<SumOfDiv[i]<<endl;
 //     }
-    
+
 // }
 
 //                  Sieve - prime generation
@@ -136,14 +133,14 @@
 // vector<int>primes;
 
 // void primeGen(ll n){
-    
+
 //     // taking all the odds
 //     // because only 2 is the even prime number
 //     for (int i = 3; i <= n; i+=2)
 //     {
 //         isPrime[i] = 1;
 //     }
-    
+
 //     for (int i = 3; i <= sqrt(n); i+=2)
 //     {
 //         if(isPrime[i]){
@@ -151,10 +148,10 @@
 //             {// only marking the multiples of previous prime numbers
 //                 isPrime[j] = 0;
 //             }
-            
+
 //         }
 //     }
-    
+
 //     primes.push_back(2);
 //     for (int i = 3; i <= n; i++)
 //     {
@@ -162,14 +159,13 @@
 //             primes.push_back(i);
 //         }
 //     }
-    
-    
+
 // }
 // int main()
 // {
 //     ios_base::sync_with_stdio(false);
 //     cin.tie(NULL);
-    
+
 //     // see in the global space -
 //     // always use bitset<mx>isPrime; to store the isPrime array
 //     ll mx = 50;
@@ -178,15 +174,14 @@
 //         cout<<it<<" ";
 //     }
 
-//     // c = a*b 
+//     // c = a*b
 //     // one of a and b will be less than sqrt(c) and one will be greater than sqrt(c)
 //     // 48 = 6*8 , sqrt(48) = 6.692 so 6 < 6.692
 //     // that is why in the outer loop i<=sqrt(n);
 
-    
 // }
 
-//              Prime Factorization 
+//              Prime Factorization
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
@@ -229,24 +224,25 @@ vector<int> PrimeFactorization(int n)
 
     for (auto it : primes)
     {
-        if (n % it == 0)
+
+        if (1ll * it * it > n)
         {
-            if (1ll * it * it > n)
-            {
-                break;
+            break;
             // in factors of N there will be only 1 value which will be greater than sqrt(n)
             // and that value always comes at the end
-            }
+        }
+        if (n % it == 0)
+        {
             while (n % it == 0)
-            {// if n%it then , dividing n with it until that is possible
+            { // if n%it then , dividing n with it until that is possible
                 factors.push_back(it);
                 n = n / it;
             }
         }
     }
 
-    if (n > 1)// the last remaning n will always be prime
-    {// because-> in factors of N there will be only 1 value which will be greater than sqrt(n)
+    if (n > 1) // the last remaning n will always be prime
+    {          // because-> in factors of N there will be only 1 value which will be greater than sqrt(n)
         factors.push_back(n);
     }
     return factors;
