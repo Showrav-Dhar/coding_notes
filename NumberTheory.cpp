@@ -235,9 +235,10 @@ vector<int> PrimeFactorization(int n)
             {
                 break;
             // in factors of N there will be only 1 value which will be greater than sqrt(n)
+            // and that value always comes at the end
             }
             while (n % it == 0)
-            {// if n%it then , dividing n with it until it is possible
+            {// if n%it then , dividing n with it until that is possible
                 factors.push_back(it);
                 n = n / it;
             }
