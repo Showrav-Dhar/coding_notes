@@ -218,9 +218,9 @@ void primeGen(ll n)
     }
 }
 
-vector<int> PrimeFactorization(int n)
+vector<ll> PrimeFactorization(int n)
 {
-    vector<int> factors;
+    vector<ll> factors;
 
     for (auto it : primes)
     {
@@ -256,7 +256,7 @@ int main()
     int lim = 1e7;
     primeGen(lim);
     int n = 40131;
-    vector<int> ara = PrimeFactorization(n);
+    vector<ll> ara = PrimeFactorization(n);
     cout << "Prime Factors of " << n << " -> ";
     for (auto it : ara)
     {
