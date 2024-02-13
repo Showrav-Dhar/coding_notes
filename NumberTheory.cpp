@@ -233,6 +233,7 @@ vector<ll> PrimeFactorization(ll n)
         }
         if (n % it == 0)
         {
+            // factors.push_back(it); // To get only the distinct prime divisiors
             while (n % it == 0)
             { // if n%it then , dividing n with it until that is possible
                 factors.push_back(it);
