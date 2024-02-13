@@ -132,7 +132,7 @@
 // bitset<mx>isPrime;
 // vector<int>primes;
 
-// void primeGen(ll n){
+// void primeGen(int n){
 
 //     // taking all the odds
 //     // because only 2 is the even prime number
@@ -189,7 +189,7 @@ const int mx = 1e7 + 123;
 ll ara[mx];
 bitset<mx> isPrime;
 vector<int> primes;
-void primeGen(ll n)
+void primeGen(int n)
 {
     for (int i = 3; i <= n; i += 2)
     {
@@ -218,7 +218,7 @@ void primeGen(ll n)
     }
 }
 
-vector<ll> PrimeFactorization(int n)
+vector<ll> PrimeFactorization(ll n)
 {
     vector<ll> factors;
 
