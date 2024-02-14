@@ -249,19 +249,59 @@ vector<ll> PrimeFactorization(ll n)
     return factors;
 }
 
+
+
+// For using harmony series
+
+const int pMx = 1e7+123;
+vector<int> factorsUsingHarmony[pMx]; // array of vector
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int lim = 1e7;
-    primeGen(lim);
-    int n = 40131;
-    vector<ll> ara = PrimeFactorization(n);
-    cout << "Prime Factors of " << n << " -> ";
-    for (auto it : ara)
-    {
-        cout << it << " ";
-    }
-    cout << endl;
-}
+    // int lim = 1e7;
+    // primeGen(lim);
+    // int n = 40131;
+    // vector<ll> ara = PrimeFactorization(n);
+    // cout << "Prime Factors of " << n << " -> ";
+    // for (auto it : ara)
+    // {
+    //     cout << it << " ";
+    // }
+    // cout << endl;
+
+    //          Prime Factorizaiton using harmony series
+
+    // though it has higher time compleixity than sieve
+//     int lim2 = 1e6;
+//     primeGen(lim2);
+
+//     for(auto p : primes){
+
+//         for (int i = p; i <= lim2; i+=p)
+//         {
+//             if(i%p == 0){
+//                 // factorsUsingHarmony[i].push_back(p);// to get only unique factors
+                
+//                 int temp = i;
+//                 while(temp%p == 0){
+//                     factorsUsingHarmony[i].push_back(p);
+//                     temp = temp/p;
+//                     // to get all the frequency of the prime divisor
+//                 }
+//             }
+//         }
+//     }
+//     for (int i = 1; i <= 20 ; i++)
+//     {
+//         cout<<i<<" : ";
+//         for(auto p : factorsUsingHarmony[i]){
+//             cout<<p<<" ";
+//         }
+//         cout<<endl;
+//     }
+
+
+// }
