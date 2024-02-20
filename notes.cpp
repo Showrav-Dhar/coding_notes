@@ -120,8 +120,8 @@
 //     cout<<"Index = "<<l<<" item = "<<ara[l]<<endl;
 // }
 
-
-// BINARY SEARCH 
+ 
+// BINARY SEARCH    ll mid = l + (r - l) / 2;
 // FIND THE [ maximum index ] of an array element [ not greater than] the given one
 
 
