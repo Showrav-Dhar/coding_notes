@@ -303,5 +303,18 @@ int main()
 //         cout<<endl;
 //     }
 
+ // sum of factors 
 
-// }
+    map<int,int> freq;
+    for(auto it : ara){
+        freq[it]++;
+    }
+    ll sum = 1;
+    for(auto it : freq){
+        ll a = ( (pow(it.first,it.second+1) - 1)/(it.first-1) );
+        sum *= a;
+        // cout<<it.first<<" "<<it.second<<endl;
+    }
+
+
+}
