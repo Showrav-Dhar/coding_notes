@@ -16,7 +16,7 @@
 // Task-2: https://atcoder.jp/contests/abc172/tasks/abc172_d
 // Solution:https://github.com/MuhammadShahriar/Module-3-Codes/blob/main/Class-1/Vjudge%20Contest%20Task-2.cpp
 
-// number of divisors
+// number of divisors (Showrav)
 // #include<bits/stdc++.h>
 // using namespace std;
 // typedef long long int ll ;
@@ -304,18 +304,31 @@ int main()
 //     }
 
  // sum of factors (divisors)
-
+// it can be done without map too manually 
     map<int,int> freq;
     for(auto it : Pfactors){
         freq[it]++;
     }
+    // it.first = factor
+    // it.second = how many time it is present as a factor of n
+    
     ll sum = 1;
     for(auto it : freq){
         ll a = ( (pow(it.first,it.second+1) - 1)/(it.first-1) );
         sum *= a;
         // cout<<it.first<<" "<<it.second<<endl;
     }
-    cout<<sum<<endl;// sum of factors
+    cout<<"Sum of Divisors = "<<sum<<endl;// sum of factors
+
+
+// number of divisor
+    ll NOD = 1;
+
+    for(auto it : freq){
+        ll a = (it.second+1);
+        NOD *= a;
+    }
+    cout<<"Total Number of divisors = "<<NOD<<endl;
 
 
 }
