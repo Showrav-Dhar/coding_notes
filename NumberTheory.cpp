@@ -261,16 +261,16 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    // int lim = 1e7;
-    // primeGen(lim);
-    // int n = 40131;
-    // vector<ll> ara = PrimeFactorization(n);
-    // cout << "Prime Factors of " << n << " -> ";
-    // for (auto it : ara)
-    // {
-    //     cout << it << " ";
-    // }
-    // cout << endl;
+    int lim = 1e7;
+    primeGen(lim);
+    int n = 84;
+    vector<ll> Pfactors = PrimeFactorization(n);
+    cout << "Prime Factors of " << n << " -> ";
+    for (auto it : Pfactors)
+    {
+        cout << it << " ";
+    }
+    cout << endl;
 
     //          Prime Factorizaiton using harmony series
 
@@ -303,10 +303,10 @@ int main()
 //         cout<<endl;
 //     }
 
- // sum of factors 
+ // sum of factors (divisors)
 
     map<int,int> freq;
-    for(auto it : ara){
+    for(auto it : Pfactors){
         freq[it]++;
     }
     ll sum = 1;
@@ -315,6 +315,7 @@ int main()
         sum *= a;
         // cout<<it.first<<" "<<it.second<<endl;
     }
+    cout<<sum<<endl;// sum of factors
 
 
 }
