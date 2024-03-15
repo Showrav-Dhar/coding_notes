@@ -878,3 +878,248 @@
 // }
 
 // sum of all divisor of a number 
+
+// Recursion basics for graph theory and dp
+//                  Striver recursion video basic
+
+// Video 1 to 5
+
+// Question 1 [ 1to n ]
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// const int mx = 1e7 + 123;
+// ll ara[mx];
+// void rec(int i, int n)
+// {
+//     if (i>n)
+//     {
+//         return;
+//     }
+
+//     cout << "showrav" << endl;
+//     i++;
+//     rec(i,n);
+// }
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     rec(1,5);
+// }
+
+// Question 2 [ n to 1 ]
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// const int mx = 1e7 + 123;
+// ll ara[mx];
+
+// void rec(int i, int n)
+// {
+//     if (i > n)
+//     {
+//         return;
+//     }
+//     i++;
+//     rec(i, n);
+//     i--;// backtracking
+//     cout << i << " ";
+// }
+
+// void rec(int i, int n)
+// {
+//     if (i < 1)
+//     {
+//         return;
+//     }
+//     cout << i << " ";
+//     i--;
+//     rec(i,n);
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     rec(5, 5);
+// }
+
+// question 4 [ 1 to N] using backtracking
+// #include<bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll ;
+// const int mx = 1e7+123;
+// ll ara[mx];
+
+// void rec(int i,int n){
+//     if(i < 1){
+//         return;
+//     }
+//     rec(i-1,n);
+//     cout<<i<<" ";
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     int n = 5;
+//     rec(n,n);
+// }
+
+// question 5 [ n to 1 ] using backtracking
+// #include<bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll ;
+// const int mx = 1e7+123;
+// ll ara[mx];
+
+// void rec(int i,int n){
+//     if(i > n){
+//         return;
+//     }
+//     rec(i+1,n);
+//     cout<<i<<" ";
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     int n = 5;
+//     rec(1,n);
+// }
+
+// sum of first n number
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// const int mx = 1e7 + 123;
+// ll ara[mx];
+// void rec(int n, int sum) // parameter wise
+// {
+//     if (n < 1)
+//     {
+//         cout << "Sum = " << sum << endl;
+//         return;
+//     }
+//     rec(n - 1, sum + n);
+// }
+// int sum(int n){
+//     if ( n == 0){
+//         return 0;
+//     }
+//     return n+sum(n-1);
+// }
+
+// int fact(int n){
+//     if(n==0){
+//         return 1;
+//     }
+
+//     return n*fact(n-1);
+
+// }
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     // rec(5, 0);
+//     // cout<<sum(5)<<endl;
+//     cout<<fact(3)<<endl;
+
+// }
+
+//          Video 4
+
+// Reverse an array using recursion
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// void revSingle(int i, int ara[], int n)// using single pointer
+// {
+//     if (i >= n / 2)
+//     {
+//         return;
+//     }
+//     swap(ara[i], ara[n - i - 1]);
+//     revSingle(i + 1, ara, n);
+// }
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     int n;
+//     cin >> n;
+//     int ara[n];
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> ara[i];
+//     }
+//     revSingle(0, ara, n);
+//     for (int i = 0; i < n; i++)
+//     {
+//         cout << ara[i] << " ";
+//     }
+//     cout << endl;
+// }
+
+// Check if a given string is palindrome or not
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// bool palindrome(int i, string &str)
+// {
+//     if (i == str.size() / 2)
+//     {
+//         return true;
+//     }
+
+//     if (str[i] != str[str.size() - i - 1])
+//     {
+//         return false;
+//     }
+//     return palindrome(i + 1, str);
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     string str = "madam";
+//     if(palindrome(0,str)){
+//         cout<<"It is Palindrome\n";
+//     }else{
+//          cout<<"It is not Palindrome\n";
+//     }
+// }
+
+// video 5 -
+// Multiple Recursion Calls | Problems |
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+
+// int fibo(int n)
+// {
+//     if (n <= 1)
+//     {
+//         return n;
+//     }
+//     int last = fibo(n - 1);
+//     int slast = fibo(n - 2);
+//     return last + slast;
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     cout << fibo(3) << endl;
+// }
