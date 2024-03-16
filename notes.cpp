@@ -755,77 +755,77 @@ bool customComparator(const std::pair<int, int>& a, const std::pair<int, int>& b
 // number of divisor (CPS)
 // using prime factorization
 
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long int ll;
-const int mx = 1e7 + 123;
-ll ara[mx];
-bitset<mx> isPrime;
-vector<int> primes;
-void primeGen(int n)
-{
-    for (int i = 3; i <= n; i += 2)
-    {
-        isPrime[i] = 1;
-    }
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// const int mx = 1e7 + 123;
+// ll ara[mx];
+// bitset<mx> isPrime;
+// vector<int> primes;
+// void primeGen(int n)
+// {
+//     for (int i = 3; i <= n; i += 2)
+//     {
+//         isPrime[i] = 1;
+//     }
 
-    for (int i = 3; i <= sqrt(n); i += 2)
-    {
-        if (isPrime[i])
-        {
-            for (int j = i * i; j <= n; j += i)
-            {
-                isPrime[j] = 0;
-            }
-        }
-    }
+//     for (int i = 3; i <= sqrt(n); i += 2)
+//     {
+//         if (isPrime[i])
+//         {
+//             for (int j = i * i; j <= n; j += i)
+//             {
+//                 isPrime[j] = 0;
+//             }
+//         }
+//     }
 
-    primes.push_back(2);
-    isPrime[2] = 1;
-    for (int i = 3; i <= n; i++)
-    {
-        if (isPrime[i])
-        {
-            primes.push_back(i);
-        }
-    }
-}
-
-
-int NumberOfDivisiors(int n){
-    int NOD = 1; //to track number of divisors, and every one has atleast 1 divisor
-
-    for (auto it : primes){
-        if(1ll * it * it > n){
-            break;
-        }
-
-        if(n%it == 0){
-           int ct = 0;
-           while(n%it==0){
-            n = n/it;
-            ct++;
-           }
-           ct+=1; // because we have to calculate the 0 too
-           NOD *= ct;
-        }
-    }
-
-    if(n>1){
-        NOD *= 2;
-    }
-
-    return NOD;
-}
+//     primes.push_back(2);
+//     isPrime[2] = 1;
+//     for (int i = 3; i <= n; i++)
+//     {
+//         if (isPrime[i])
+//         {
+//             primes.push_back(i);
+//         }
+//     }
+// }
 
 
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+// int NumberOfDivisiors(int n){
+//     int NOD = 1; //to track number of divisors, and every one has atleast 1 divisor
 
-    int limit = 1e7;
-    primeGen(limit);
-    cout<<NumberOfDivisiors(84)<<endl;
+//     for (auto it : primes){
+//         if(1ll * it * it > n){
+//             break;
+//         }
+
+//         if(n%it == 0){
+//            int ct = 0;
+//            while(n%it==0){
+//             n = n/it;
+//             ct++;
+//            }
+//            ct+=1; // because we have to calculate the 0 too
+//            NOD *= ct;
+//         }
+//     }
+
+//     if(n>1){
+//         NOD *= 2;
+//     }
+
+//     return NOD;
+// }
+
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     int limit = 1e7;
+//     primeGen(limit);
+//     cout<<NumberOfDivisiors(84)<<endl;
       
-}
+// }
