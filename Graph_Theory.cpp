@@ -22,7 +22,7 @@
 //         int u,v;
 //         cin>>u>>v;
 //         adj[u].push_back(v);
-//         adj[v].push_back(u);
+//         adj[v].push_back(u);// directed hole ei line ta hobena
 //     }
 
 //     // use for each loop to access adjacency list
