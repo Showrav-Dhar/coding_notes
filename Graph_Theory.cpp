@@ -189,9 +189,9 @@ int main()
         {
             continue;
         }
-        current_cc.clear();
+        current_cc.clear();// cleared the previously visited componant
         dfs(i);
-        cc.push_back(current_cc);
+        cc.push_back(current_cc);// stored the currently visited componant
         ct++;
     }
 
