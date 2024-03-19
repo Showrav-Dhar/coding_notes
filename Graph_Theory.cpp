@@ -137,3 +137,76 @@
     
     
 // }
+
+//    STORING ALL THE CONNECTED COMPONANTS
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+const int mx = 1e7 + 123;
+
+vector<vector<int>> cc; // all connected componants
+vector<int> current_cc; // current connected componants
+// to store the graph of currently running dfs
+
+vector<int> adj[mx];
+bool vis[mx];
+
+void dfs(int node)
+{
+    // after entering the vertex we are adding it to the current_cc vector,
+    vis[node] = true;
+    current_cc.push_back(node);
+    for (auto child : adj[node])
+    {
+        if (vis[child] == false)
+        {
+            dfs(child);
+        }
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n, e;
+    cin >> n >> e;
+    for (int i = 0; i < e; i++)
+    {
+        int x, y;
+        cin >> x >> y;
+        adj[x].push_back(y);
+        adj[y].push_back(x);
+    }
+
+    int ct = 0;
+    // to store the connected componants
+
+    for (int i = 1; i <= n; i++) // node count 1 theke hochhe
+    {
+        if (vis[i] == true)
+        {
+            continue;
+        }
+        current_cc.clear();
+        dfs(i);
+        cc.push_back(current_cc);
+        ct++;
+    }
+
+    cout<<"Number of connected componants = " << cc.size() << endl;
+    int num = 1;
+    for (auto componant : cc)
+    {   
+        cout<<"Connected Componant "<<num<<" : ";
+        for (auto it : componant)
+        {
+            cout << it << " ";
+        }
+        num++;
+        cout << endl;
+    }
+
+    // time complexity = O(v+e);
+}
