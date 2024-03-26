@@ -217,7 +217,7 @@ using namespace std;
 typedef long long int ll;
 const int mx = 1e7 + 123;
 
-// Find cycle in a graph using dfs
+// Find cycle in a undirected graph using dfs
 
 vector<int> adj[mx];
 bool vis[mx];
