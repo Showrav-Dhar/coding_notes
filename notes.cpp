@@ -638,7 +638,10 @@ int main()
 // from cf template of Asad_Bin
 
 /*
-
+bool SameSign(int x, int y)// check if two integer has same sign
+{
+    return (x >= 0) ^ (y < 0);
+}
 ll gcd(ll a, ll b){ while (b){ a %= b; swap(a, b);} return a;}
 ll lcm(ll a, ll b){ return (a/gcd(a, b)*b);}
 ll ncr(ll a, ll b){ ll x = max(a-b, b), ans=1; for(ll K=a, L=1; K>=x+1; K--, L++){ ans = ans * K; ans /= L;} return ans;}
