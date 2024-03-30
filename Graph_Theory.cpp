@@ -212,84 +212,94 @@
 // }
 
 
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long int ll;
-const int mx = 1e7 + 123;
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// const int mx = 1e7 + 123;
 
-// Find cycle in a undirected graph using dfs
+// // Find cycle in a undirected graph using dfs
 
-vector<int> adj[mx];
-bool vis[mx];
-            // 2           1
-            // 3           2
-            // 5           3
-bool dfs(int node, int parent)
-{
-    vis[node] = true;
-    bool isLoopExists = false;
+// vector<int> adj[mx];
+// bool vis[mx];
+//             // 2           1
+//             // 3           2
+//             // 5           3
+// bool dfs(int node, int parent)
+// {
+//     vis[node] = true;
+//     bool isLoopExists = false;
 
-    for (auto child : adj[node])
-    {
-        if (vis[child] == true and child == parent)
-        { // backtrack er shomoi check kortesi
-            // current child er parent ke visited bhebe jeno cycle detect na kore.
-            continue;
-        }
-        if (vis[child])// jehetu child ekbar visit korsi so cycle exist kore
-        {
-            return true;
-        }
+//     for (auto child : adj[node])
+//     {
+//         if (vis[child] == true and child == parent)
+//         { // backtrack er shomoi check kortesi
+//             // current child er parent ke visited bhebe jeno cycle detect na kore.
+//             continue;
+//         }
+//         if (vis[child])// jehetu child ekbar visit korsi so cycle exist kore
+//         {
+//             return true;
+//         }
 
-        isLoopExists = isLoopExists or dfs(child, node); // current child er parent = node
-    }
-    return isLoopExists;
-}
+//         isLoopExists = isLoopExists or dfs(child, node); // current child er parent = node
+//     }
+//     return isLoopExists;
+// }
 
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
 
-    int n, e;
-    cin >> n >> e;
-    for (int i = 0; i < e; i++)
-    {
-        int x, y;
-        cin >> x >> y;
-        adj[x].push_back(y);
-        adj[y].push_back(x);
-    }
+//     int n, e;
+//     cin >> n >> e;
+//     for (int i = 0; i < e; i++)
+//     {
+//         int x, y;
+//         cin >> x >> y;
+//         adj[x].push_back(y);
+//         adj[y].push_back(x);
+//     }
 
-    // graph -
-    // 8 6
-    // 1 2
-    // 1 5
-    // 2 3
-    // 2 4
-    // 3 5
-    // 6 7
-    bool LoopExists = false;
+//     // graph -
+//     // 8 6
+//     // 1 2
+//     // 1 5
+//     // 2 3
+//     // 2 4
+//     // 3 5
+//     // 6 7
+//     bool LoopExists = false;
 
-    for (int i = 1; i <= n; i++)
-    {
-        if (vis[i] == true)
-        {
-            continue;
-        }
-        if (dfs(i, 0))// dfs(i,0) 0 disi cause 0 kono vertices nai question e.
-        {
-            LoopExists = true;
-            break;
-        }
-    }
+//     for (int i = 1; i <= n; i++)
+//     {
+//         if (vis[i] == true)
+//         {
+//             continue;
+//         }
+//         if (dfs(i, 0))// dfs(i,0) 0 disi cause 0 kono vertices nai question e.
+//         {
+//             LoopExists = true;
+//             break;
+//         }
+//     }
 
-    if (LoopExists)
-    {
-        cout << "Cycle Exists in graph\n";
-    }
-    else
-    {
-        cout << "Cycle Does Not Exists in graph\n";
-    }
-}
+//     if (LoopExists)
+//     {
+//         cout << "Cycle Exists in graph\n";
+//     }
+//     else
+//     {
+//         cout << "Cycle Does Not Exists in graph\n";
+//     }
+// }
+
+// void GraphCleaning()// needed when there is multiple test case
+// {
+//     for (int i = 0; i < mx; i++)
+//     {
+//         adj[i].clear();
+//         isNode[i] = 0;
+//         vis[i] = 0;
+//     }
+// }
