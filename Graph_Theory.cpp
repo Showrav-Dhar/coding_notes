@@ -304,3 +304,83 @@
 //         vis[i] = 0;
 //     }
 // }
+
+// // Graph in matrix - 
+//                             // number of island - 
+
+// // https://www.geeksforgeeks.org/problems/find-the-number-of-islands/1?category=
+// // https://leetcode.com/problems/number-of-islands/description/ 
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// const int mx = 1e7 + 123;
+// ll ara[mx];
+
+// void dfs(int i, int j, int row, int col, vector<vector<char>>& grid) {
+//     // checking the matrix boundary and if cell == 1
+//     if (i >= 0 and i < row and j >= 0 and j < col and grid[i][j] == '1') {
+//         if (grid[i][j] == '1') {
+//             // did this so that, we don't have to maintain a visited matrix
+//             grid[i][j] = '0';
+//         }
+
+//         // if movement is up,down,left,right only
+//         dfs(i + 1, j, row, col, grid); //  up
+//         dfs(i - 1, j, row, col, grid); //  down
+//         dfs(i, j + 1, row, col, grid); //  right
+//         dfs(i, j - 1, row, col, grid); //  left
+//         // if movement is up,down,left,right and diagonal
+//         dfs(i - 1, j - 1, row, col, grid); // upper left corner
+//         dfs(i + 1, j + 1, row, col, grid); // lower right corner
+//         dfs(i + 1, j - 1, row, col, grid); // lower left corner
+//         dfs(i - 1, j + 1, row, col, grid); // upper right corner
+        
+//         }
+//     }
+
+//     int numIslands(vector<vector<char>>& grid) {
+//         int row = grid.size();
+//         int col = grid[0].size();
+//         int ct = 0;
+//         for (int i = 0; i < row; i++) {
+//             for (int j = 0; j < col; j++) {
+//                 if (grid[i][j] == '1') {
+//                     dfs(i, j, row, col, grid);
+//                     ct++;
+//                 }
+//             }
+//         }
+
+//         return ct;
+//     }
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     int n, m;
+//     cin >> n >> m;
+//     vector<vector<char>> grid;
+//     vector<char> ara;
+//     for (int i = 0; i < n; i++)
+//     {
+//         for (int j = 0; j < m; j++)
+//         {
+//             char c;
+//             cin >> c;
+//             ara.push_back(c);
+//         }
+//         grid.push_back(ara);
+//         ara.clear();
+//     }
+//     cout << numIslands(grid) << endl;
+//     for (int i = 0; i < n; i++)
+//     {
+//         for (int j = 0; j < m; j++)
+//         {
+//             cout << grid[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+
