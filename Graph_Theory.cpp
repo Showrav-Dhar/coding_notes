@@ -384,3 +384,63 @@
 // }
 
 
+// DFS in tree
+// Height and Depth of a TREE
+
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+const int mx = 1e5 + 123;
+vector<int> tree[mx];
+int depth[mx], height[mx];
+
+void dfs(int vertex, int parent)
+{
+    // take action on vertex after entering the vertex
+    // while going down
+    for (int child : tree[vertex])
+    {
+        // take action on child before entering the child
+        // while going down
+        if (child == parent){ continue; }
+        depth[child] = depth[vertex] + 1;// while going down
+        dfs(child, vertex);
+        height[vertex] = max(height[vertex], height[child] + 1);// going up
+        // take action on child after exiting the child
+        // while going up
+    }
+    // take action on vertex before exiting the vertex
+    // while going up
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n;
+    cin >> n;
+    // for n number of node
+    // there is n-1 edges
+    for (int i = 0; i < n - 1; i++)
+    {
+        int x, y;
+        cin >> x >> y;
+        tree[x].push_back(y);
+        tree[y].push_back(x);
+    }
+
+    dfs(1, 0);
+
+    cout<<"Depth "<<endl;
+    for (int i = 1; i <= n; i++)
+    {
+        cout<<depth[i]<<" ";
+    }
+    cout<<"\nHeight "<<endl;
+    for (int i = 1; i <= n; i++)
+    {
+        cout<<height[i]<<" ";
+    }
+    
+}
