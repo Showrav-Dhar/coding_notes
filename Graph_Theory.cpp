@@ -310,6 +310,7 @@
 
 // // https://www.geeksforgeeks.org/problems/find-the-number-of-islands/1?category=
 // // https://leetcode.com/problems/number-of-islands/description/ 
+// https://lightoj.com/problem/guilty-prince
 // #include <bits/stdc++.h>
 // using namespace std;
 // typedef long long int ll;
