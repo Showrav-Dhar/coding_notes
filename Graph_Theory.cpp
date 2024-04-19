@@ -387,131 +387,196 @@
 // DFS in tree
 // Height and Depth of a TREE
 
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long int ll;
-const int mx = 1e5 + 123;
-vector<int> tree[mx];
-int depth[mx], height[mx];
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// const int mx = 1e5 + 123;
+// vector<int> tree[mx];
+// int depth[mx], height[mx];
 
-void dfs(int vertex, int parent)
-{
-    // take action on vertex after entering the vertex
-    // while going down
-    for (int child : tree[vertex])
-    {
-        // take action on child before entering the child
-        // while going down
-        if (child == parent){ continue; }
-        depth[child] = depth[vertex] + 1;// while going down
-        dfs(child, vertex);
-        height[vertex] = max(height[vertex], height[child] + 1);// going up
-        // take action on child after exiting the child
-        // while going up
-    }
-    // take action on vertex before exiting the vertex
-    // while going up
-}
+// void dfs(int vertex, int parent)
+// {
+//     // take action on vertex after entering the vertex
+//     // while going down
+//     for (int child : tree[vertex])
+//     {
+//         // take action on child before entering the child
+//         // while going down
+//         if (child == parent){ continue; }
+//         depth[child] = depth[vertex] + 1;// while going down
+//         dfs(child, vertex);
+//         height[vertex] = max(height[vertex], height[child] + 1);// going up
+//         // take action on child after exiting the child
+//         // while going up
+//     }
+//     // take action on vertex before exiting the vertex
+//     // while going up
+// }
 
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
 
-    int n;
-    cin >> n;
-    // for n number of node
-    // there is n-1 edges
-    for (int i = 0; i < n - 1; i++)
-    {
-        int x, y;
-        cin >> x >> y;
-        tree[x].push_back(y);
-        tree[y].push_back(x);
-    }
+//     int n;
+//     cin >> n;
+//     // for n number of node
+//     // there is n-1 edges
+//     for (int i = 0; i < n - 1; i++)
+//     {
+//         int x, y;
+//         cin >> x >> y;
+//         tree[x].push_back(y);
+//         tree[y].push_back(x);
+//     }
 
-    dfs(1, 0);
+//     dfs(1, 0);
 
-    cout<<"Depth "<<endl;
-    for (int i = 1; i <= n; i++)
-    {
-        cout<<depth[i]<<" ";
-    }
-    cout<<"\nHeight "<<endl;
-    for (int i = 1; i <= n; i++)
-    {
-        cout<<height[i]<<" ";
-    }
+//     cout<<"Depth "<<endl;
+//     for (int i = 1; i <= n; i++)
+//     {
+//         cout<<depth[i]<<" ";
+//     }
+//     cout<<"\nHeight "<<endl;
+//     for (int i = 1; i <= n; i++)
+//     {
+//         cout<<height[i]<<" ";
+//     }
     
-}
+// }
 
-// practice problem dfs on a tree - https://codeforces.com/problemset/problem/580/C
-// solve - 
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long int ll;
-const int mx = 1e5 + 123;
+// // practice problem dfs on a tree - https://codeforces.com/problemset/problem/580/C
+// // solve - 
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// const int mx = 1e5 + 123;
 
-vector<int> tree[mx];
-int cat[mx];
-int ans = 0;
-int m = 0;
-// numc = number of consequetive cats
-// maxc = max consequtive
-void dfs(int vertex, int parent, int numc, int maxc)
-{
+// vector<int> tree[mx];
+// int cat[mx];
+// int ans = 0;
+// int m = 0;
+// // numc = number of consequetive cats
+// // maxc = max consequtive
+// void dfs(int vertex, int parent, int numc, int maxc)
+// {
 
-    if (cat[vertex] == 1)// if current vertex has cat
-    {
-        numc++;// number of consequetive cats will increase
-    }
-    else
-    {
-        numc = 0;// if current vertex does not have cat.
-    }
-    maxc = max(numc, maxc);
-    // now we know for each node the max number of consequtive
-    // cats in the path from 1 to that node.
-    int numchildren = 0; // to check if current node is leaf node
-    for (auto child : tree[vertex])
-    {
+//     if (cat[vertex] == 1)// if current vertex has cat
+//     {
+//         numc++;// number of consequetive cats will increase
+//     }
+//     else
+//     {
+//         numc = 0;// if current vertex does not have cat.
+//     }
+//     maxc = max(numc, maxc);
+//     // now we know for each node the max number of consequtive
+//     // cats in the path from 1 to that node.
+//     int numchildren = 0; // to check if current node is leaf node
+//     for (auto child : tree[vertex])
+//     {
 
-        if (child != parent)
-        {
-            dfs(child, vertex, numc, maxc);
-            numchildren++;
-        }
-    }
+//         if (child != parent)
+//         {
+//             dfs(child, vertex, numc, maxc);
+//             numchildren++;
+//         }
+//     }
 
-    if (numchildren == 0 and maxc <= m)
-    { // leaf node has zero children 
-        // if maxc is less then m then ans++
-        // because it means we have reached leaf and leaf has restaurent
-        // and till leaf node maxc <=m
-        ans++;
-    }
-}
+//     if (numchildren == 0 and maxc <= m)
+//     { // leaf node has zero children 
+//         // if maxc is less then m then ans++
+//         // because it means we have reached leaf and leaf has restaurent
+//         // and till leaf node maxc <=m
+//         ans++;
+//     }
+// }
 
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int n;
-    cin >> n >> m;
-    for (int i = 1; i <= n; i++)
-    {
-        cin >> cat[i];
-    }
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     int n;
+//     cin >> n >> m;
+//     for (int i = 1; i <= n; i++)
+//     {
+//         cin >> cat[i];
+//     }
 
-    for (int i = 1; i <= n - 1; i++)
-    {
-        int x, y;
-        cin >> x >> y;
-        tree[x].push_back(y);
-        tree[y].push_back(x);
-    }
+//     for (int i = 1; i <= n - 1; i++)
+//     {
+//         int x, y;
+//         cin >> x >> y;
+//         tree[x].push_back(y);
+//         tree[y].push_back(x);
+//     }
 
-    dfs(1, 0, 0, 0);
+//     dfs(1, 0, 0, 0);
 
-    cout << ans << endl;
-}
+//     cout << ans << endl;
+// }
+
+// // BFS
+// #include<bits/stdc++.h>
+// using namespace std;
+// const int N = 1e5+10;
+// vector<int> g[N];
+// int vis[N] ;
+// int level[N];
+
+// void BFS(int source)
+// {
+//     queue<int>q;
+//     q.push(source);
+//     vis[source] = 1;
+
+//     while(!q.empty())
+//     {
+//         int node = q.front();
+//         q.pop();
+
+//         cout<<node<<" ";// je order e traverse hochhe
+
+//         for(int child : g[node])
+//         {
+//             if(!vis[child]){
+//                 q.push(child);
+//                 vis[child] = 1;// q te insert korar por e visited mark kore dilam
+//                level[child] = level[node]+1; 
+//             }
+//         }
+//     }
+//     cout<<endl;
+
+// }
+
+// int main()
+// {
+//     // int n,m;
+//     // cin>>n>>m;
+//     int n;
+//     cin>>n;
+
+//     for (int i = 0; i < n-1; i++)// n - 1 , cause we are running bfs in a tree 
+//     {
+//         int x,y;
+//         cin>>x>>y;
+//         g[x].push_back(y);
+//         g[y].push_back(x);
+//     }
+
+//     cout<<"\nORDER OF TRAVERSAL\n";
+//     // int source;
+//     // cin>>source;
+
+//     // BFS(source);
+//     BFS(1);
+    
+
+//     for (int i = 1; i <=n ; i++)
+//     {
+//         cout<<i<<" : "<<level[i]<<endl;
+//     }
+    
+    
+// }
