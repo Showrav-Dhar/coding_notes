@@ -590,3 +590,85 @@
     
 // }
 
+
+// BFS on a Grid
+
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+
+int dis[1001][1001];
+int n, m;
+int vis[1001][1001];//
+// see code n code video.
+bool isValid(int x, int y)
+{
+
+    if (x < 1 || x > n || y < 1 || y > m)
+    {
+        return false;
+    }
+
+    if (vis[x][y] == 1)
+    {
+        return false;
+    }
+
+    return true;
+}
+
+int dx[] = {-1, 0, 1, 0};
+int dy[] = {0, 1, 0, -1};
+
+void bfs(int srcX, int srcY)
+{
+    queue<pair<int, int>> q;
+    q.push({srcX, srcY});
+    vis[srcX][srcY] = 1;
+    dis[srcX][srcY] = 0;
+
+    while (!q.empty())
+    {
+        int curX = q.front().first;
+        int curY = q.front().second;
+
+        q.pop();
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (isValid(curX + dx[i], curY + dy[i]))
+            {
+                int newX = curX + dx[i];
+                int newY = curY + dy[i];
+
+                q.push({newX, newY});
+                vis[newX][newY] = 1;
+                dis[newX][newY] = dis[curX][curY] + 1;
+            }
+        }
+    }
+
+    cout << "Distance Array\n";
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= m; j++)
+        {
+            cout << dis[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int startX,startY;
+    
+    cin>>n>>m;
+    cin>>startX>>startY;
+    // didn't take any matrix as an input.
+    bfs(startX,startY);
+
+}
