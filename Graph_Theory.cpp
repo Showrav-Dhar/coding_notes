@@ -593,70 +593,191 @@
 
 // BFS on a Grid
 
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+
+// int dis[1001][1001];
+// int n, m;
+// int vis[1001][1001];//
+// // see code n code video.
+// bool isValid(int x, int y)
+// {
+
+//     if (x < 1 || x > n || y < 1 || y > m)
+//     {
+//         return false;
+//     }
+
+//     if (vis[x][y] == 1)
+//     {
+//         return false;
+//     }
+
+//     return true;
+// }
+
+// int dx[] = {-1, 0, 1, 0};
+// int dy[] = {0, 1, 0, -1};
+
+// void bfs(int srcX, int srcY)
+// {
+//     queue<pair<int, int>> q;
+//     q.push({srcX, srcY});
+//     vis[srcX][srcY] = 1;
+//     dis[srcX][srcY] = 0;
+
+//     while (!q.empty())
+//     {
+//         int curX = q.front().first;
+//         int curY = q.front().second;
+
+//         q.pop();
+
+//         for (int i = 0; i < 4; i++)
+//         {
+//             if (isValid(curX + dx[i], curY + dy[i]))
+//             {
+//                 int newX = curX + dx[i];
+//                 int newY = curY + dy[i];
+
+//                 q.push({newX, newY});
+//                 vis[newX][newY] = 1;
+//                 dis[newX][newY] = dis[curX][curY] + 1;
+//             }
+//         }
+//     }
+
+//     cout << "Distance Array\n";
+//     for (int i = 1; i <= n; i++)
+//     {
+//         for (int j = 1; j <= m; j++)
+//         {
+//             cout << dis[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     int startX,startY;
+    
+//     cin>>n>>m;
+//     cin>>startX>>startY;
+//     // didn't take any matrix as an input.
+//     bfs(startX,startY);
+
+// }
+
+// Labyrinth https://cses.fi/problemset/task/1193
+// BFS on GRID
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
 
-int dis[1001][1001];
+const int len = 1001;
+char ar[len][len]; // to store given matrix
+char br[len][len]; // to store traversal direction
+bool vis[len][len];
+
 int n, m;
-int vis[1001][1001];//
-// see code n code video.
+vector<char> path;
+
 bool isValid(int x, int y)
 {
 
-    if (x < 1 || x > n || y < 1 || y > m)
+    if (x < 1 or x > n or y < 1 or y > m)
     {
         return false;
     }
-
-    if (vis[x][y] == 1)
+    if (ar[x][y] == '#' or vis[x][y] == true)
     {
         return false;
     }
-
     return true;
 }
 
-int dx[] = {-1, 0, 1, 0};
-int dy[] = {0, 1, 0, -1};
-
-void bfs(int srcX, int srcY)
-{
+bool bfs(int x, int y)
+{ // x , y = coordinated of A
     queue<pair<int, int>> q;
-    q.push({srcX, srcY});
-    vis[srcX][srcY] = 1;
-    dis[srcX][srcY] = 0;
+    q.push({x, y});
+    vis[x][y] = true;
 
     while (!q.empty())
     {
-        int curX = q.front().first;
-        int curY = q.front().second;
-
+        int a = q.front().first;  // row
+        int b = q.front().second; // column
         q.pop();
 
-        for (int i = 0; i < 4; i++)
+        if (ar[a][b] == 'B')
         {
-            if (isValid(curX + dx[i], curY + dy[i]))
+            // now creating the path from B to A
+            while (1)
             {
-                int newX = curX + dx[i];
-                int newY = curY + dy[i];
+                // every direction will be rerversed
+                path.push_back(br[a][b]);
 
-                q.push({newX, newY});
-                vis[newX][newY] = 1;
-                dis[newX][newY] = dis[curX][curY] + 1;
+                if (path.back() == 'L')
+                {
+                    b++;
+                }
+                if (path.back() == 'R')
+                {
+                    b--;
+                }
+                if (path.back() == 'U')
+                {
+                    a++;
+                }
+                if (path.back() == 'D')
+                {
+                    a--;
+                }
+
+                if (a == x and b == y)
+                {
+                    break;
+                }
             }
+            return true;
+        }
+
+        // left
+        if (isValid(a, b - 1))
+        {
+            br[a][b - 1] = 'L';
+            q.push({a, b - 1});
+            vis[a][b - 1] = true;
+        }
+        // right
+        if (isValid(a, b + 1))
+        {
+            br[a][b + 1] = 'R';
+            q.push({a, b + 1});
+            vis[a][b + 1] = true;
+        }
+        // down
+        if (isValid(a + 1, b))
+        {
+            br[a + 1][b] = 'D';
+            q.push({a + 1, b});
+            vis[a + 1][b] = true;
+        }
+
+        // up
+        if (isValid(a - 1, b))
+        {
+            br[a - 1][b] = 'U';
+            q.push({a - 1, b});
+            vis[a - 1][b] = true;
         }
     }
 
-    cout << "Distance Array\n";
-    for (int i = 1; i <= n; i++)
-    {
-        for (int j = 1; j <= m; j++)
-        {
-            cout << dis[i][j] << " ";
-        }
-        cout << endl;
-    }
+    return false;
 }
 
 int main()
@@ -664,11 +785,33 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int startX,startY;
-    
-    cin>>n>>m;
-    cin>>startX>>startY;
-    // didn't take any matrix as an input.
-    bfs(startX,startY);
+    cin >> n >> m;
+    int x, y;
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= m; j++)
+        {
+            cin >> ar[i][j];
+            if (ar[i][j] == 'A')
+            {
+                x = i;
+                y = j;
+            }
+        }
+    }
 
+    if (bfs(x, y))
+    {
+        cout << "YES\n";
+        cout << path.size() << "\n";
+        while (path.size() > 0)
+        {
+            cout << path.back();
+            path.pop_back();
+        }
+    }
+    else
+    {
+        cout << "NO\n";
+    }
 }
