@@ -949,89 +949,180 @@
 // }
 
 // https://vjudge.net/problem/uva-762
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long int ll;
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
 
-map<string, vector<string>> graph;
-map<string, int> level;
-map<string, string> parent;
+// map<string, vector<string>> graph;
+// map<string, int> level;
+// map<string, string> parent;
 
-void bfs(string source)
-{
-    level.clear();
+// void bfs(string source)
+// {
+//     level.clear();
 
-    queue<string> q;
-    q.push(source);
-    level[source] = 1;
+//     queue<string> q;
+//     q.push(source);
+//     level[source] = 1;
 
-    while (!q.empty())
-    {
+//     while (!q.empty())
+//     {
 
-        string current = q.front();
-        q.pop();
+//         string current = q.front();
+//         q.pop();
 
-        for (auto child : graph[current])
-        {
-            if (level[child] == 0)
-            {
-                level[child] = level[current] + 1;
-                parent[child] = current;
-                q.push(child);
-            }
-        }
-    }
-}
+//         for (auto child : graph[current])
+//         {
+//             if (level[child] == 0)
+//             {
+//                 level[child] = level[current] + 1;
+//                 parent[child] = current;
+//                 q.push(child);
+//             }
+//         }
+//     }
+// }
 
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
 
-    int n;
-    bool yes = 0; // delete
-    while (cin >> n)
-    {
-        if (yes)
-            cout << endl;
-        yes = 1;
+//     int n;
+//     bool yes = 0; // delete
+//     while (cin >> n)
+//     {
+//         if (yes)
+//             cout << endl;
+//         yes = 1;
 
-        graph.clear();
-        parent.clear();
+//         graph.clear();
+//         parent.clear();
 
-        for (int i = 0; i < n; i++)
-        {
-            string s1, s2;
-            cin >> s1;
-            cin >> s2;
-            graph[s1].push_back(s2);
-            graph[s2].push_back(s1);
-        }
+//         for (int i = 0; i < n; i++)
+//         {
+//             string s1, s2;
+//             cin >> s1;
+//             cin >> s2;
+//             graph[s1].push_back(s2);
+//             graph[s2].push_back(s1);
+//         }
 
-        string source, destination;
-        cin >> source;
-        cin >> destination;
+//         string source, destination;
+//         cin >> source;
+//         cin >> destination;
 
-        bfs(source);
+//         bfs(source);
 
-        if (level[destination] == 0)
-        {
-            cout << "No route\n";
-            continue;
-        }
+//         if (level[destination] == 0)
+//         {
+//             cout << "No route\n";
+//             continue;
+//         }
 
-        vector<pair<string, string>> ans;
+//         vector<pair<string, string>> ans;
 
-        while (!parent[destination].empty())
-        {
-            ans.push_back({parent[destination], destination});
-            destination = parent[destination];
-        }
-        reverse(ans.begin(), ans.end());
-        for (auto it : ans)
-        {
-            cout << it.first << " " << it.second << endl;
-        }
-        cout << endl;
-    }
-}
+//         while (!parent[destination].empty())
+//         {
+//             ans.push_back({parent[destination], destination});
+//             destination = parent[destination];
+//         }
+//         reverse(ans.begin(), ans.end());
+//         for (auto it : ans)
+//         {
+//             cout << it.first << " " << it.second << endl;
+//         }
+//         cout << endl;
+//     }
+// }
+
+
+//  Bi-partite Graph Check;
+
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+
+// const int mx = 212;
+
+// vector<int> adj[mx];
+// int colour[mx];
+
+// bool isBipartite(int source)
+// {
+
+//     memset(colour, -1, mx);
+//     colour[source] = 1;
+//     queue<int> q;
+//     q.push(source);
+
+//     while (!q.empty())
+//     {
+//         int current = q.front();
+//         q.pop();
+
+//         for (auto neighbuour : adj[current])
+//         {
+//             if (colour[neighbuour] == -1)
+//             {
+//                 if (colour[current] == 1)
+//                 {
+//                     colour[neighbuour] = 2;
+//                 }
+//                 else
+//                 {
+//                     colour[neighbuour] = 1;
+//                 }
+//                 q.push(neighbuour);
+//             }
+//             else if (colour[neighbuour] == colour[current])
+//             {
+//                 return 0; // means not bi-partite
+//             }
+//         }
+//     }
+//     return 1; // means bi-partite;
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     int n;
+
+//     while (cin >> n)
+//     {
+
+//         if (n == 0)
+//         {
+//             break;
+//         }
+
+//         for (int i = 0; i <= n; i++)
+//         {
+//             adj[i].clear();
+//         }
+        
+//         int edges;
+//         cin >> edges;
+
+//         for (int i = 0; i < edges; i++)
+//         {
+//             int u, v;
+//             cin >> u >> v;
+//             adj[u].push_back(v);
+//             adj[v].push_back(u);
+//         }
+
+//         if (isBipartite(0))
+//         {
+//             cout << "BICOLORABLE.\n";
+//         }
+//         else
+//         {
+//             cout << "NOT BICOLORABLE.\n";
+//         }
+//     }
+// }
