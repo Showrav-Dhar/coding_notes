@@ -818,85 +818,167 @@
 
 // BFS ON GRID - https://www.spoj.com/problems/NAKANJ/
 // luv video 
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+
+// int vis[8][8];
+// int level[8][8];
+
+// int getX(string s)
+// {
+//     return s[0] - 'a'; // "b1" means 1,1 coordinate
+// }
+// int getY(string s)
+// {
+//     return s[1] - '1'; // "b1" means 1,1 coordinate
+// }
+
+// bool isValid(int x, int y)
+// {
+
+//     return x >= 0 and y >= 0 and x < 8 and y < 8;
+// }
+
+// vector<pair<int, int>> movements // horse movement vector
+// {
+//     {-1, 2}, {1, 2},
+//     {-1, -2}, {1, -2},
+//     {2, -1}, {2, 1},
+//     {-2, -1}, {-2, 1}
+// };
+
+// int bfs(string source, string dest)
+// {
+//     int sourceX = getX(source);
+//     int sourceY = getY(source);
+
+//     int destX = getX(dest);
+//     int destY = getY(dest);
+
+//     queue<pair<int, int>> q;
+//     q.push({sourceX, sourceY});
+//     vis[sourceX][sourceY] = 1;
+   
+
+//     while (!q.empty())
+//     {
+//         pair<int, int> v = q.front();
+//         int x = v.first, y = v.second;
+
+//         q.pop();
+//         for (auto move : movements) // bfs for every 8 position
+//         {
+//             int childX = move.first + x;
+//             int childY = move.second + y;
+
+//             if (isValid(childX, childY) == false)
+//             {
+//                 continue;
+//             }
+//             if (vis[childX][childY] == false)
+//             {
+//                 q.push({childX, childY});
+//                 vis[childX][childY] = true;
+//                 level[childX][childY] += level[x][y] + 1;
+//             }
+//         }
+//     }
+
+//     return level[destX][destY];
+// }
+
+// void reset()
+// {
+
+//     for (int i = 0; i < 8; i++)
+//     {
+//         for (int j = 0; j < 8; j++)
+//         {
+//             level[i][j] = 0;
+//             vis[i][j] = 0;
+//         }
+//     }
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     int t;
+//     cin >> t;
+//     while (t--)
+//     {
+//         reset();
+//         string s1, s2;
+//         cin >> s1 >> s2;
+//         cout << bfs(s1, s2)<<endl;
+//     }
+// }
+
+// // graph using map<string,vector<string>>adj;
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// const int mx = 1e7 + 123;
+// ll ara[mx];
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     int n;
+//     cin>>n;
+//     map<string, vector<string>> graph;
+//     for (int i = 0; i < n; i++)
+//     {
+//         string s1, s2;
+//         cin >> s1 >> s2;
+//         graph[s1].push_back(s2);
+//         graph[s2].push_back(s1);
+//     }
+
+//     for(auto it : graph){
+//         cout<<it.first<<" -> ";
+//         for(auto child : it.second){
+//             cout<<child<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+
+// https://vjudge.net/problem/uva-762
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
 
-int vis[8][8];
-int level[8][8];
+map<string, vector<string>> graph;
+map<string, int> level;
+map<string, string> parent;
 
-int getX(string s)
+void bfs(string source)
 {
-    return s[0] - 'a'; // "b1" means 1,1 coordinate
-}
-int getY(string s)
-{
-    return s[1] - '1'; // "b1" means 1,1 coordinate
-}
+    level.clear();
 
-bool isValid(int x, int y)
-{
-
-    return x >= 0 and y >= 0 and x < 8 and y < 8;
-}
-
-vector<pair<int, int>> movements // horse movement vector
-{
-    {-1, 2}, {1, 2},
-    {-1, -2}, {1, -2},
-    {2, -1}, {2, 1},
-    {-2, -1}, {-2, 1}
-};
-
-int bfs(string source, string dest)
-{
-    int sourceX = getX(source);
-    int sourceY = getY(source);
-
-    int destX = getX(dest);
-    int destY = getY(dest);
-
-    queue<pair<int, int>> q;
-    q.push({sourceX, sourceY});
-    vis[sourceX][sourceY] = 1;
-   
+    queue<string> q;
+    q.push(source);
+    level[source] = 1;
 
     while (!q.empty())
     {
-        pair<int, int> v = q.front();
-        int x = v.first, y = v.second;
 
+        string current = q.front();
         q.pop();
-        for (auto move : movements) // bfs for every 8 position
+
+        for (auto child : graph[current])
         {
-            int childX = move.first + x;
-            int childY = move.second + y;
-
-            if (isValid(childX, childY) == false)
+            if (level[child] == 0)
             {
-                continue;
+                level[child] = level[current] + 1;
+                parent[child] = current;
+                q.push(child);
             }
-            if (vis[childX][childY] == false)
-            {
-                q.push({childX, childY});
-                vis[childX][childY] = true;
-                level[childX][childY] += level[x][y] + 1;
-            }
-        }
-    }
-
-    return level[destX][destY];
-}
-
-void reset()
-{
-
-    for (int i = 0; i < 8; i++)
-    {
-        for (int j = 0; j < 8; j++)
-        {
-            level[i][j] = 0;
-            vis[i][j] = 0;
         }
     }
 }
@@ -906,13 +988,50 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int t;
-    cin >> t;
-    while (t--)
+    int n;
+    bool yes = 0; // delete
+    while (cin >> n)
     {
-        reset();
-        string s1, s2;
-        cin >> s1 >> s2;
-        cout << bfs(s1, s2)<<endl;
+        if (yes)
+            cout << endl;
+        yes = 1;
+
+        graph.clear();
+        parent.clear();
+
+        for (int i = 0; i < n; i++)
+        {
+            string s1, s2;
+            cin >> s1;
+            cin >> s2;
+            graph[s1].push_back(s2);
+            graph[s2].push_back(s1);
+        }
+
+        string source, destination;
+        cin >> source;
+        cin >> destination;
+
+        bfs(source);
+
+        if (level[destination] == 0)
+        {
+            cout << "No route\n";
+            continue;
+        }
+
+        vector<pair<string, string>> ans;
+
+        while (!parent[destination].empty())
+        {
+            ans.push_back({parent[destination], destination});
+            destination = parent[destination];
+        }
+        reverse(ans.begin(), ans.end());
+        for (auto it : ans)
+        {
+            cout << it.first << " " << it.second << endl;
+        }
+        cout << endl;
     }
 }
