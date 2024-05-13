@@ -1064,23 +1064,27 @@
 
 //         for (auto neighbuour : adj[current])
 //         {
-//             if (colour[neighbuour] == -1)
+//             if (colour[neighbuour] == -1) // means neighbour is not coloured yet
 //             {
-//                 if (colour[current] == 1)
-//                 {
+//                 if (colour[current] == 1) 
+//                 {    // if current colour is 1 then neighbour colour should be 2
 //                     colour[neighbuour] = 2;
 //                 }
 //                 else
 //                 {
 //                     colour[neighbuour] = 1;
 //                 }
-//                 q.push(neighbuour);
+
+//                 q.push(neighbuour);// most important
+
 //             }
 //             else if (colour[neighbuour] == colour[current])
-//             {
+//             { // if neighbour is same as parent then it is not bipartite
 //                 return 0; // means not bi-partite
 //             }
 //         }
+
+
 //     }
 //     return 1; // means bi-partite;
 // }
