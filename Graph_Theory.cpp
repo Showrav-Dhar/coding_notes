@@ -1130,3 +1130,8 @@
 //         }
 //     }
 // }
+
+// grid movement - 
+vector<pair<int, int>> movement{
+    {0, 1}, {0, -1}, {1, 0}, {-1, 0}
+};
