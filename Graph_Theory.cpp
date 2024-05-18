@@ -1174,6 +1174,9 @@
 
 //         visited[current_node] = 1;
 
+//          marked visited outside for loop, 
+//          because a node can be visited multiple time in dijkstra,which does not happen in BFS
+
 //         for (auto child : graph[current_node])
 //         { // {node,weight}
 //             int child_node = child.first;
