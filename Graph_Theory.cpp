@@ -1132,6 +1132,101 @@
 // }
 
 // grid movement - 
-vector<pair<int, int>> movement{
-    {0, 1}, {0, -1}, {1, 0}, {-1, 0}
-};
+// vector<pair<int, int>> movement{
+//     {0, 1}, {0, -1}, {1, 0}, {-1, 0}
+// };
+
+//                              dijkstra 2024
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+
+// const int N = 1e4;
+// const int INF = 1e7 + 123;
+
+// vector<pair<int, int>> graph[N]; // {node,weight}
+
+// vector<int> dijkstra(int source)
+// {
+
+//     vector<int> visited(N, 0);
+//     vector<int> distance(N, INF);
+
+//     set<pair<int, int>> st; // works like priority queue {weight,node}
+
+//     st.insert({0, source});
+//     distance[source] = 0;
+
+//     while (!st.empty())
+//     {
+//         pair<int, int> node = *st.begin();
+
+//         int current_node = node.second;
+//         int current_weight = node.first;
+
+//         st.erase(st.begin()); // pop back the first item
+
+//         if (visited[current_node] == 1)
+//         {
+//             continue;
+//         }
+
+//         visited[current_node] = 1;
+
+//         for (auto child : graph[current_node])
+//         { // {node,weight}
+//             int child_node = child.first;
+//             int child_weight = child.second;
+
+//             if (distance[current_node] + child_weight < distance[child_node])
+//             {
+//                 distance[child_node] = distance[current_node] + child_weight;
+//                 st.insert({distance[child_node],child_node});
+//             }
+//         }
+//     }
+//     return distance;// distance vector
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     cout << "Enter Nodes and edges\n";
+//     int node, edges;
+//     cin >> node >> edges;
+
+//     cout << "Enter source " << endl;
+//     int source;
+//     cin >> source;
+
+//     cout << "Enter graph with directed edges and weights\n";
+
+//     for (int i = 0; i < edges; i++)
+//     {
+//         int x, y, w;
+//         cin >> x >> y >> w;
+
+//         graph[x].push_back({y, w});
+//     }
+
+//     vector<int> ans = dijkstra(source);
+
+//     for (int i = 1; i <= node; i++)
+//     {
+//         cout << ans[i] << " ";
+//     }
+//     cout << endl;
+// }
+
+// // // Leetcode - dijkstra
+// // 743. Network Delay Time
+// // 787. Cheapest Flights Within K Stops
+// // 778. Swim in Rising Water
+// // 815. Bus Routes
+// // 1091. Shortest Path in Binary Matrix
+// // 1631. Path With Minimum Effort
+// // 2812. Find the Safest Path in a Grid
+// // 2642. Design Graph With Shortest Path Calculator
