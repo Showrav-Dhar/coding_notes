@@ -1347,3 +1347,20 @@
 
 //     cout << minimumCostPath(grid) << endl;
 // }
+
+//  path print 
+
+// int par = 0;
+//     int dest = n;
+
+//     while(1){
+//         par = parent[dest];
+//         if(par == 0){
+//             break;
+//         }
+//         path.push_back(par);
+//         dest = par;
+//     }
+
+//     reverse(path.begin(),path.end());
+//     path.push_back(n);
