@@ -56,9 +56,8 @@
 //     // 1 2 10
 //     // 2 3 2
 //     // 2 4 3
-    
 
-//     // multi graph example 
+//     // multi graph example
 //     // 4 3 // n,m,w
 //     // 1 2 10
 //     // 1 2 13
@@ -85,10 +84,9 @@
 //     }
 // }
 
-
 // DFS
 
-// Find Connected number of Components in a undirected graph 
+// Find Connected number of Components in a undirected graph
 // Question - https://www.hackerearth.com/problem/algorithm/connected-components-in-a-graph/
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -99,7 +97,7 @@
 // bool vis[mx];
 
 // void dfs(int node){
-    
+
 //     vis[node] = true;
 //     for(auto child : adj[node]){
 //         if(vis[child]==false){
@@ -112,7 +110,7 @@
 // {
 //     ios_base::sync_with_stdio(false);
 //     cin.tie(NULL);
-    
+
 //     int n,e;
 //     cin>>n>>e;
 //     for (int i = 0; i < e; i++)
@@ -133,9 +131,7 @@
 //         ct++;
 //     }
 //     cout<<ct<<endl;
-    
-    
-    
+
 // }
 
 //    STORING ALL THE CONNECTED COMPONANTS
@@ -198,7 +194,7 @@
 //     cout<<"Number of connected componants = " << cc.size() << endl;
 //     int num = 1;
 //     for (auto componant : cc)
-//     {   
+//     {
 //         cout<<"Connected Componant "<<num<<" : ";
 //         for (auto it : componant)
 //         {
@@ -211,7 +207,7 @@
 //     // time complexity = O(v+e);
 // }
 
-//          LUV VIDEO 
+//          LUV VIDEO
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -305,11 +301,11 @@
 //     }
 // }
 
-// // Graph in matrix - 
-//                             // number of island - 
+// // Graph in matrix -
+//                             // number of island -
 
 // // https://www.geeksforgeeks.org/problems/find-the-number-of-islands/1?category=
-// // https://leetcode.com/problems/number-of-islands/description/ 
+// // https://leetcode.com/problems/number-of-islands/description/
 // https://lightoj.com/problem/guilty-prince
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -335,7 +331,7 @@
 //         dfs(i + 1, j + 1, row, col, grid); // lower right corner
 //         dfs(i + 1, j - 1, row, col, grid); // lower left corner
 //         dfs(i - 1, j + 1, row, col, grid); // upper right corner
-        
+
 //         }
 //     }
 
@@ -383,7 +379,6 @@
 //         cout << endl;
 //     }
 // }
-
 
 // DFS in tree
 // Height and Depth of a TREE
@@ -443,11 +438,11 @@
 //     {
 //         cout<<height[i]<<" ";
 //     }
-    
+
 // }
 
 // // practice problem dfs on a tree - https://codeforces.com/problemset/problem/580/C
-// // solve - 
+// // solve -
 // #include <bits/stdc++.h>
 // using namespace std;
 // typedef long long int ll;
@@ -485,7 +480,7 @@
 //     }
 
 //     if (numchildren == 0 and maxc <= m)
-//     { // leaf node has zero children 
+//     { // leaf node has zero children
 //         // if maxc is less then m then ans++
 //         // because it means we have reached leaf and leaf has restaurent
 //         // and till leaf node maxc <=m
@@ -519,8 +514,8 @@
 
 // // BFS
 
-// basic problem of BFS - 
-// hackerrank - monk and garden 
+// basic problem of BFS -
+// hackerrank - monk and garden
 // gfg - bfs of graph
 // cses - message route https://cses.fi/problemset/task/1667
 // CSES - Labyrinth https://cses.fi/problemset/task/1193
@@ -551,7 +546,7 @@
 //             if(!vis[child]){
 //                 q.push(child);
 //                 vis[child] = 1;// q te insert korar por e visited mark kore dilam
-//                level[child] = level[node]+1; 
+//                level[child] = level[node]+1;
 //             }
 //         }
 //     }
@@ -566,7 +561,7 @@
 //     int n;
 //     cin>>n;
 
-//     for (int i = 0; i < n-1; i++)// n - 1 , cause we are running bfs in a tree 
+//     for (int i = 0; i < n-1; i++)// n - 1 , cause we are running bfs in a tree
 //     {
 //         int x,y;
 //         cin>>x>>y;
@@ -580,16 +575,13 @@
 
 //     // BFS(source);
 //     BFS(1);
-    
 
 //     for (int i = 1; i <=n ; i++)
 //     {
 //         cout<<i<<" : "<<level[i]<<endl;
 //     }
-    
-    
-// }
 
+// }
 
 // BFS on a Grid
 
@@ -665,7 +657,7 @@
 //     cin.tie(NULL);
 
 //     int startX,startY;
-    
+
 //     cin>>n>>m;
 //     cin>>startX>>startY;
 //     // didn't take any matrix as an input.
@@ -817,7 +809,7 @@
 // }
 
 // BFS ON GRID - https://www.spoj.com/problems/NAKANJ/
-// luv video 
+// luv video
 // #include <bits/stdc++.h>
 // using namespace std;
 // typedef long long int ll;
@@ -859,7 +851,6 @@
 //     queue<pair<int, int>> q;
 //     q.push({sourceX, sourceY});
 //     vis[sourceX][sourceY] = 1;
-   
 
 //     while (!q.empty())
 //     {
@@ -1036,10 +1027,7 @@
 //     }
 // }
 
-
 //  Bi-partite Graph Check;
-
-
 // #include <bits/stdc++.h>
 // using namespace std;
 // typedef long long int ll;
@@ -1066,7 +1054,7 @@
 //         {
 //             if (colour[neighbuour] == -1) // means neighbour is not coloured yet
 //             {
-//                 if (colour[current] == 1) 
+//                 if (colour[current] == 1)
 //                 {    // if current colour is 1 then neighbour colour should be 2
 //                     colour[neighbuour] = 2;
 //                 }
@@ -1083,7 +1071,6 @@
 //                 return 0; // means not bi-partite
 //             }
 //         }
-
 
 //     }
 //     return 1; // means bi-partite;
@@ -1108,7 +1095,7 @@
 //         {
 //             adj[i].clear();
 //         }
-        
+
 //         int edges;
 //         cin >> edges;
 
@@ -1131,17 +1118,16 @@
 //     }
 // }
 
-//                                         grid movement - 
+//                                         grid movement -
 // vector<pair<int, int>> movement{
 //     {0, 1}, {0, -1}, {1, 0}, {-1, 0}
 // };
 
 //                              dijkstra 2024
 
+//                          Weighted Graph representation
 
-//                          Weighted Graph representation 
-
-                                // ADJACENCY LIST 
+// ADJACENCY LIST
 
 /// // vector<pair<int, int>> graph[N];
 // INPUT - >
@@ -1154,7 +1140,7 @@
 //            graph[y].push_back({x, w});
 // //     }
 
-                                // ADJACENCY Matrix
+// ADJACENCY Matrix
 
 // vector<vector<int>> adj[V]; // vector of vector , internal vector size always 2
 
@@ -1168,7 +1154,7 @@
 //         t1.push_back(w);
 //         adj[u].push_back(t1); // node u, connected to v,with weight W
 
-//         
+//
 //         vector<int> t2;
 //         t2.push_back(u);
 //         t2.push_back(w);
@@ -1183,7 +1169,7 @@
 //             cout << it[0] << " " << it[1] << endl;
 //         }
 //         cout<<endl;
-//     } 
+//     }
 
 // #include <bits/stdc++.h>
 // using namespace std;
@@ -1221,7 +1207,7 @@
 
 //         visited[current_node] = 1;
 
-//          marked visited outside for loop, 
+//          marked visited outside for loop,
 //          because a node can be visited multiple time in dijkstra,which does not happen in BFS
 
 //         for (auto child : graph[current_node])
@@ -1280,3 +1266,85 @@
 // // 1631. Path With Minimum Effort
 // // 2812. Find the Safest Path in a Grid
 // // 2642. Design Graph With Shortest Path Calculator
+
+//                      dijkstra on grid
+
+// https://www.geeksforgeeks.org/problems/minimum-cost-path3833/1
+// #include <bits/stdc++.h>
+// using namespace std;
+// int minimumCostPath(vector<vector<int>> &grid)
+// {
+//     pair<int, int> src = {0, 0};
+//     set<pair<long long int, pair<int, int>>> st; //{weight,{x,y}}
+//     st.insert({0, src});
+
+//     int row = grid.size();
+//     int col = grid[0].size();
+//     long long int inf = 10000;
+
+//     vector<vector<long long int>> distance(row, vector<long long int>(col, inf));
+//     vector<vector<int>> visited(row, vector<int>(col, 0));
+
+//     distance[0][0] = grid[0][0];
+
+//     vector<pair<int, int>> movement{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+
+//     while (!st.empty())
+//     {
+//         auto it = *st.begin();
+//         st.erase(st.begin());
+
+//         pair<int, int> node = it.second;
+//         long long int node_w = it.first;
+
+//         if (visited[node.first][node.second] == 1)
+//         {
+//             continue;
+//         }
+
+//         visited[node.first][node.second] = 1;
+
+//         for (auto it : movement)
+//         {
+//             int adj_x = node.first + it.first;
+//             int adj_y = node.second + it.second;
+
+//             if (adj_x >= 0 and adj_y >= 0 and adj_x < row and adj_y < col)
+//             {
+//                 long long int adj_w = grid[adj_x][adj_y];
+
+//                 if (adj_w + node_w < distance[adj_x][adj_y])
+//                 {
+//                     distance[adj_x][adj_y] = adj_w + node_w;
+//                     st.insert({adj_w + node_w, {adj_x, adj_y}});
+//                 }
+//             }
+//         }
+//     }
+
+//     return distance[row - 1][col - 1] + distance[0][0];
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+
+//     int row, col
+//                      cin >>
+//                  row;
+//     cin >> col;
+
+//     vector<vector<int>> grid(row, vector<int>(col, -1));
+//     for (int i = 0; i < row; i++)
+//     {
+//         for (int j = 0; j < col; j++)
+//         {
+//             int a;
+//             cin >> a;
+//             grid[i][j] = a;
+//         }
+//     }
+
+//     cout << minimumCostPath(grid) << endl;
+// }
