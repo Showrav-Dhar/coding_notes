@@ -1330,9 +1330,8 @@
 //     ios_base::sync_with_stdio(false);
 //     cin.tie(NULL);
 
-//     int row, col
-//                      cin >>
-//                  row;
+//     int row, col;
+//     cin >>row;
 //     cin >> col;
 
 //     vector<vector<int>> grid(row, vector<int>(col, -1));
