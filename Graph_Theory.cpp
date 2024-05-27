@@ -1138,6 +1138,53 @@
 
 //                              dijkstra 2024
 
+
+//                          Weighted Graph representation 
+
+                                // ADJACENCY LIST 
+
+/// // vector<pair<int, int>> graph[N];
+// INPUT - >
+// for (int i = 0; i < edges; i++)
+// //     {
+// //         int x, y, w;
+// //         cin >> x >> y >> w;
+
+// //         graph[x].push_back({y, w});
+//            graph[y].push_back({x, w});
+// //     }
+
+                                // ADJACENCY Matrix
+
+// vector<vector<int>> adj[V]; // vector of vector , internal vector size always 2
+
+//     for (int i = 0; i < 3; i++)
+//     {
+//         int u, v, w;
+//         cin >> u >> v >> w;
+
+//         vector<int> t1;
+//         t1.push_back(v);
+//         t1.push_back(w);
+//         adj[u].push_back(t1); // node u, connected to v,with weight W
+
+//         
+//         vector<int> t2;
+//         t2.push_back(u);
+//         t2.push_back(w);
+//         adj[v].push_back(t2); / node v, connected to u,with weight W
+//     }
+
+//     for (int i = 0; i < 3; i++)
+//     {
+//         cout << "node " << i << " -> ";
+//         for (auto it : adj[i])
+//         {
+//             cout << it[0] << " " << it[1] << endl;
+//         }
+//         cout<<endl;
+//     } 
+
 // #include <bits/stdc++.h>
 // using namespace std;
 // typedef long long int ll;
