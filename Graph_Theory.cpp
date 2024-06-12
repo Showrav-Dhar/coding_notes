@@ -1420,3 +1420,73 @@
 //         }
 //     }
 // };
+
+
+// https://cses.fi/problemset/task/1672/
+
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// typedef long long int ll;
+// const int mx = 505;
+// const ll INF = 1e18;
+// ll matrix[mx][mx];
+// void filler()
+// {
+//     for (int i = 1; i <= mx; i++)
+//     {
+//         for (int j = 1; j <= mx; j++)
+//         {
+//             matrix[i][j] = INF;
+
+//             if (i == j)
+//             {
+//                 matrix[i][j] = 0;
+//             }
+//         }
+//     }
+// }
+
+// int main()
+// {
+//     ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     int n, m, q;
+//     cin >> n >> m >> q;
+
+//     filler();
+
+//     for (int i = 0; i < m; i++)
+//     {
+//         int a, b;
+//         ll c;
+//         cin >> a >> b >> c;
+//         matrix[a][b] = min(matrix[a][b],c);
+//         matrix[b][a] = min(matrix[b][a],c);
+//     }
+
+//     for (int k = 1; k <= n; k++)
+//     {
+//         for (int i = 1; i <= n; i++)
+//         {
+//             for (int j = 1; j <= n; j++)
+//             {
+//                 matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]);
+//             }
+//         }
+//     }
+
+//     while (q--)
+//     {
+//         int a, b;
+//         cin >> a >> b;
+//         if (matrix[a][b] == INF)
+//         {
+//             cout << -1 << endl;
+//         }
+//         else
+//         {
+//             cout<<matrix[a][b]<<endl;
+//         }
+//     }
+// }
