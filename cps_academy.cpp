@@ -1125,4 +1125,11 @@
 // }
 
 
-// Graph Theory 
+// Lexicographically smallest 
+
+// to make any string lexicographycally smallest
+// always try to replace the left most characters with the 
+// lowest characters like -> a,b,c etc.
+
+// that is the basics of making any string lexicographycally smallest
+// from another string
